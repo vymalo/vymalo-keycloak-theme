@@ -49,7 +49,9 @@ body {
   }
 
   &.form-group {
-    @apply flex flex-col gap-4
+    // This is needed by something, but I don't know what
+    // This fucks the login.ftl
+    // @apply flex flex-col gap-4
   }
 
   .kcLabelWrapperClass {

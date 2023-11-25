@@ -17,12 +17,12 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     return (
         <>
             <header className='absolute top-0 w-full z-10'>
-                <nav className="navbar bg-base-200 sm:bg-base-100" role="navigation">
+                <nav className="navbar bg-base-200 sm:bg-base-100 px-6" role="navigation">
                     <label htmlFor="main-drawer" className="btn btn-ghost btn-circle drawer-button lg:hidden">
                         <Menu className='text-primary'/>
                     </label>
                     <div className="flex-1">
-                        <span className="text-xl pl-4">Vymalo accounts</span>
+                        <span className="text-xl">Vymalo accounts</span>
                     </div>
 
                     <div className="flex-none">
