@@ -1,25 +1,26 @@
 // ejected using 'npx eject-keycloak-page'
-import { clsx } from "keycloakify/tools/clsx";
-import type { PageProps } from "keycloakify/login/pages/PageProps";
-import { useGetClassName } from "keycloakify/login/lib/useGetClassName";
-import type { KcContext } from "../kcContext";
-import type { I18n } from "../i18n";
+import {clsx} from "keycloakify/tools/clsx";
+import type {PageProps} from "keycloakify/login/pages/PageProps";
+import {useGetClassName} from "keycloakify/login/lib/useGetClassName";
+import type {KcContext} from "../kcContext";
+import type {I18n} from "../i18n";
 
 export default function Register(props: PageProps<Extract<KcContext, { pageId: "register.ftl" }>, I18n>) {
-    const { kcContext, i18n, doUseDefaultCss, Template, classes } = props;
+    const {kcContext, i18n, doUseDefaultCss, Template, classes} = props;
 
-    const { getClassName } = useGetClassName({
+    const {getClassName} = useGetClassName({
         doUseDefaultCss,
         classes
     });
 
-    const { url, messagesPerField, register, realm, passwordRequired, recaptchaRequired, recaptchaSiteKey } = kcContext;
+    const {url, messagesPerField, register, realm, passwordRequired, recaptchaRequired, recaptchaSiteKey} = kcContext;
 
-    const { msg, msgStr } = i18n;
+    const {msg, msgStr} = i18n;
 
     return (
-        <Template {...{ kcContext, i18n, doUseDefaultCss, classes }} headerNode={msg("registerTitle")}>
-            <form id="kc-register-form" className={getClassName("kcFormClass")} action={url.registrationAction} method="post">
+        <Template {...{kcContext, i18n, doUseDefaultCss, classes}} headerNode={msg("registerTitle")}>
+            <form id="kc-register-form" className={getClassName("kcFormClass")} action={url.registrationAction}
+                  method="post">
                 <div
                     className={clsx(
                         getClassName("kcFormGroupClass"),
@@ -60,6 +61,29 @@ export default function Register(props: PageProps<Extract<KcContext, { pageId: "
                             className={getClassName("kcInputClass")}
                             name="lastName"
                             defaultValue={register.formData.lastName ?? ""}
+                        />
+                    </div>
+                </div>
+
+                <div
+                    className={clsx(
+                        getClassName("kcFormGroupClass"),
+                        messagesPerField.printIfExists("user.attributes.phone", getClassName("kcFormGroupErrorClass"))
+                    )}
+                >
+                    <div className={getClassName("kcLabelWrapperClass")}>
+                        <label htmlFor="user.attributes.phone" className={getClassName("kcLabelClass")}>
+                            {msg("phoneNumber")}
+                        </label>
+                    </div>
+                    <div className={getClassName("kcInputWrapperClass")}>
+                        <input
+                            type="tel"
+                            autoComplete='tel'
+                            id="user.attributes.phone"
+                            className={getClassName("kcInputClass")}
+                            name="user.attributes.phone"
+                            defaultValue={register.formData['user.attributes.phone'] ?? ""}
                         />
                     </div>
                 </div>
@@ -143,7 +167,8 @@ export default function Register(props: PageProps<Extract<KcContext, { pageId: "
                                 </label>
                             </div>
                             <div className={getClassName("kcInputWrapperClass")}>
-                                <input type="password" id="password-confirm" className={getClassName("kcInputClass")} name="password-confirm" />
+                                <input type="password" id="password-confirm" className={getClassName("kcInputClass")}
+                                       name="password-confirm"/>
                             </div>
                         </div>
                     </>

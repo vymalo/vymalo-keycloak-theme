@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="vymalo-light" class="min-h-full h-full bg-base-100 sm:bg-base-300">
 
 <head>
   <meta charset="utf-8" />
@@ -15,52 +15,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
   -->
   <title>React App</title>
-
-  <link rel="preload" href="%PUBLIC_URL%/fonts/WorkSans/worksans-bold-webfont.woff2" as="font" crossorigin="anonymous">
-  <link rel="preload" href="%PUBLIC_URL%/fonts/WorkSans/worksans-medium-webfont.woff2" as="font" crossorigin="anonymous">
-  <link rel="preload" href="%PUBLIC_URL%/fonts/WorkSans/worksans-regular-webfont.woff2" as="font" crossorigin="anonymous">
-  <link rel="preload" href="%PUBLIC_URL%/fonts/WorkSans/worksans-semibold-webfont.woff2" as="font" crossorigin="anonymous">
-  <!-- SEE: https://docs.keycloakify.dev/limitations#self-hosted-fonts -->
-  <!-- Don't forget to import your custom fonts in Storybook as well: https://github.com/keycloakify/keycloakify-starter/blob/bb019e66fb09166cb9af1e24e230994f59daa420/src/keycloak-theme/login/createPageStory.tsx#L21 -->
-  <style>
-    /* latin */
-    @font-face {
-    	font-family: 'Work Sans';
-    	font-style: normal;
-    	font-weight: normal;
-    	/*400*/
-    	font-display: swap;
-    	src: url("%PUBLIC_URL%/fonts/WorkSans/worksans-regular-webfont.woff2") format("woff2");
-    }
-  
-    /* latin */
-    @font-face {
-    	font-family: 'Work Sans';
-    	font-style: normal;
-    	font-weight: 500;
-    	font-display: swap;
-    	src: url("%PUBLIC_URL%/fonts/WorkSans/worksans-medium-webfont.woff2") format("woff2");
-    }
-  
-    /* latin */
-    @font-face {
-    	font-family: 'Work Sans';
-    	font-style: normal;
-    	font-weight: 600;
-    	font-display: swap;
-    	src: url("%PUBLIC_URL%/fonts/WorkSans/worksans-semibold-webfont.woff2") format("woff2");
-    }
-  
-    /* latin */
-    @font-face {
-    	font-family: 'Work Sans';
-    	font-style: normal;
-    	font-weight: bold;
-    	/*700*/
-    	font-display: swap;
-    	src: url("%PUBLIC_URL%/fonts/WorkSans/worksans-bold-webfont.woff2") format("woff2");
-    }
-  </style>
+  <link rel="stylesheet" href="%PUBLIC_URL%/fonts/louis-george-cafe/99travl-font.css" crossorigin="anonymous">
 
   <meta name="keycloakify-ignore-start">
   <script>console.log("This is logged Only in the main app, stripped out in the theme")</script>
@@ -69,9 +24,9 @@
 
 </head>
 
-<body>
+<body class="min-h-screen h-full">
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
+  <div class="min-h-screen h-full" id="root"></div>
   <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

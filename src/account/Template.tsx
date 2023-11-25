@@ -1,124 +1,78 @@
 // Copy pasted from: https://github.com/InseeFrLab/keycloakify/blob/main/src/login/Template.tsx
 
-import { clsx } from "keycloakify/tools/clsx";
-import { usePrepareTemplate } from "keycloakify/lib/usePrepareTemplate";
-import { type TemplateProps } from "keycloakify/account/TemplateProps";
-import { useGetClassName } from "keycloakify/account/lib/useGetClassName";
-import type { KcContext } from "./kcContext";
-import type { I18n } from "./i18n";
-import { assert } from "keycloakify/tools/assert";
+import {clsx} from "keycloakify/tools/clsx";
+import {type TemplateProps} from "keycloakify/account/TemplateProps";
+import type {KcContext} from "./kcContext";
+import type {I18n} from "./i18n";
+import {assert} from "keycloakify/tools/assert";
+import {Globe, LogOut, Menu} from "react-feather";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
-    const { kcContext, i18n, doUseDefaultCss, active, classes, children } = props;
+    const {kcContext, i18n, active, classes, children} = props;
 
-    const { getClassName } = useGetClassName({ doUseDefaultCss, classes });
+    const {msg, changeLocale, labelBySupportedLanguageTag, currentLanguageTag} = i18n;
 
-    const { msg, changeLocale, labelBySupportedLanguageTag, currentLanguageTag } = i18n;
-
-    const { locale, url, features, realm, message, referrer } = kcContext;
-
-    const { isReady } = usePrepareTemplate({
-        "doFetchDefaultThemeResources": doUseDefaultCss,
-        "styles": [
-            `${url.resourcesCommonPath}/node_modules/patternfly/dist/css/patternfly.min.css`,
-            `${url.resourcesCommonPath}/node_modules/patternfly/dist/css/patternfly-additions.min.css`,
-            `${url.resourcesPath}/css/account.css`
-        ],
-        "htmlClassName": getClassName("kcHtmlClass"),
-        "bodyClassName": clsx("admin-console", "user", getClassName("kcBodyClass"))
-    });
-
-    if (!isReady) {
-        return null;
-    }
+    const {locale, url, features, realm, message, referrer} = kcContext;
 
     return (
         <>
-            <header className="navbar navbar-default navbar-pf navbar-main header">
-                <nav className="navbar" role="navigation">
-                    <div className="navbar-header">
-                        <div className="container">
-                            <h1 className="navbar-title">Keycloak</h1>
-                        </div>
+            <header className='absolute top-0 w-full z-10'>
+                <nav className="navbar bg-base-200 sm:bg-base-100" role="navigation">
+                    <label htmlFor="main-drawer" className="btn btn-ghost btn-circle drawer-button lg:hidden">
+                        <Menu className='text-primary'/>
+                    </label>
+                    <div className="flex-1">
+                        <span className="text-xl pl-4">Vymalo accounts</span>
                     </div>
-                    <div className="navbar-collapse navbar-collapse-1">
-                        <div className="container">
-                            <ul className="nav navbar-nav navbar-utility">
-                                {realm.internationalizationEnabled && (assert(locale !== undefined), true) && locale.supported.length > 1 && (
-                                    <li>
-                                        <div className="kc-dropdown" id="kc-locale-dropdown">
-                                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                            <a href="#" id="kc-current-locale-link">
-                                                {labelBySupportedLanguageTag[currentLanguageTag]}
-                                            </a>
-                                            <ul>
-                                                {locale.supported.map(({ languageTag }) => (
-                                                    <li key={languageTag} className="kc-dropdown-item">
-                                                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                                        <a href="#" onClick={() => changeLocale(languageTag)}>
-                                                            {labelBySupportedLanguageTag[languageTag]}
-                                                        </a>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    </li>
-                                )}
-                                {referrer?.url && (
-                                    <li>
-                                        <a href={referrer.url} id="referrer">
-                                            {msg("backTo", referrer.name)}
-                                        </a>
-                                    </li>
-                                )}
+
+                    <div className="flex-none">
+                        <ul className="menu menu-horizontal px-1">
+                            {realm.internationalizationEnabled && (assert(locale !== undefined), true) && locale.supported.length > 1 && (
                                 <li>
-                                    <a href={url.getLogoutUrl()}>{msg("doSignOut")}</a>
+                                    <div id="kc-locale-dropdown" className='dropdown dropdown-left'>
+                                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                        <label tabIndex={0} id="kc-current-locale-link">
+                                            <Globe className='text-primary'/>
+                                        </label>
+                                        <ul tabIndex={0}
+                                            className="p-2 shadow menu dropdown-content z-[1] i18n-background rounded-box w-52">
+                                            {locale.supported.map(({languageTag}) => (
+                                                <li key={languageTag}>
+                                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                                    <label
+                                                        className={clsx('cursor-pointer', {
+                                                            'active': languageTag === currentLanguageTag,
+                                                        })}
+                                                        onClick={() => changeLocale(languageTag)}>
+                                                        {labelBySupportedLanguageTag[languageTag]}
+                                                    </label>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
                                 </li>
-                            </ul>
-                        </div>
+                            )}
+                            {referrer?.url && (
+                                <li>
+                                    <a className='link link-primary' href={referrer.url} id="referrer">
+                                        {msg("backTo", referrer.name)}
+                                    </a>
+                                </li>
+                            )}
+                            <li>
+                                <a href={url.getLogoutUrl()}>
+                                    <LogOut className='text-primary'/>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </nav>
             </header>
 
-            <div className="container">
-                <div className="bs-sidebar col-sm-3">
-                    <ul>
-                        <li className={clsx(active === "account" && "active")}>
-                            <a href={url.accountUrl}>{msg("account")}</a>
-                        </li>
-                        {features.passwordUpdateSupported && (
-                            <li className={clsx(active === "password" && "active")}>
-                                <a href={url.passwordUrl}>{msg("password")}</a>
-                            </li>
-                        )}
-                        <li className={clsx(active === "totp" && "active")}>
-                            <a href={url.totpUrl}>{msg("authenticator")}</a>
-                        </li>
-                        {features.identityFederation && (
-                            <li className={clsx(active === "social" && "active")}>
-                                <a href={url.socialUrl}>{msg("federatedIdentity")}</a>
-                            </li>
-                        )}
-                        <li className={clsx(active === "sessions" && "active")}>
-                            <a href={url.sessionsUrl}>{msg("sessions")}</a>
-                        </li>
-                        <li className={clsx(active === "applications" && "active")}>
-                            <a href={url.applicationsUrl}>{msg("applications")}</a>
-                        </li>
-                        {features.log && (
-                            <li className={clsx(active === "log" && "active")}>
-                                <a href={url.logUrl}>{msg("log")}</a>
-                            </li>
-                        )}
-                        {realm.userManagedAccessAllowed && features.authorization && (
-                            <li className={clsx(active === "authorization" && "active")}>
-                                <a href={url.resourceUrl}>{msg("myResources")}</a>
-                            </li>
-                        )}
-                    </ul>
-                </div>
+            <div id='account' className="drawer lg:drawer-open">
+                <input id="main-drawer" type="checkbox" className="drawer-toggle"/>
 
-                <div className="col-sm-9 content-area">
+                <div className="drawer-content px-6 pt-24">
                     {message !== undefined && (
                         <div className={clsx("alert", `alert-${message.type}`)}>
                             {message.type === "success" && <span className="pficon pficon-ok"></span>}
@@ -127,7 +81,54 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                         </div>
                     )}
 
-                    {children}
+                    <div className='flex flex-col gap-4 max-w-lg'>
+                        {children}
+                    </div>
+                </div>
+
+                <div className="drawer-side pt-16">
+                    <label htmlFor="main-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+                    <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                        <li className={clsx(active === "account" && "active")}>
+                            <a className={clsx(active === "account" && "active")}
+                               href={url.accountUrl}>{msg("account")}</a>
+                        </li>
+                        {features.passwordUpdateSupported && (
+                            <li className={clsx(active === "password" && "active")}>
+                                <a className={clsx(active === "password" && "active")}
+                                   href={url.passwordUrl}>{msg("password")}</a>
+                            </li>
+                        )}
+                        <li className={clsx(active === "totp" && "active")}>
+                            <a className={clsx(active === "totp" && "active")}
+                               href={url.totpUrl}>{msg("authenticator")}</a>
+                        </li>
+                        {features.identityFederation && (
+                            <li className={clsx(active === "social" && "active")}>
+                                <a className={clsx(active === "social" && "active")}
+                                   href={url.socialUrl}>{msg("federatedIdentity")}</a>
+                            </li>
+                        )}
+                        <li className={clsx(active === "sessions" && "active")}>
+                            <a className={clsx(active === "sessions" && "active")}
+                               href={url.sessionsUrl}>{msg("sessions")}</a>
+                        </li>
+                        <li className={clsx(active === "applications" && "active")}>
+                            <a className={clsx(active === "applications" && "active")}
+                               href={url.applicationsUrl}>{msg("applications")}</a>
+                        </li>
+                        {features.log && (
+                            <li className={clsx(active === "log" && "active")}>
+                                <a className={clsx(active === "log" && "active")} href={url.logUrl}>{msg("log")}</a>
+                            </li>
+                        )}
+                        {realm.userManagedAccessAllowed && features.authorization && (
+                            <li className={clsx(active === "authorization" && "active")}>
+                                <a className={clsx(active === "authorization" && "active")}
+                                   href={url.resourceUrl}>{msg("myResources")}</a>
+                            </li>
+                        )}
+                    </ul>
                 </div>
             </div>
         </>

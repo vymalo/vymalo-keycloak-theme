@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Louis George Cafe';
+    src: url('Louis George Cafe.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Louis George Cafe';
+    font-weight: bold;
+    src: url('Louis George Cafe Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Louis George Cafe';
+    font-weight: bold;
+    font-style: italic;
+    src: url('Louis George Cafe Bold Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Louis George Cafe';
+    font-style: italic;
+    src: url('Louis George Cafe Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Louis George Cafe';
+    font-weight: 300;
+    src: url('Louis George Cafe Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Louis George Cafe Light';
+    font-style: italic;
+    font-weight: 300;
+    src: url('Louis George Cafe Light Italic.ttf') format('truetype');
+}

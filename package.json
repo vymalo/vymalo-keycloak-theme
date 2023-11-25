@@ -1,11 +1,10 @@
 {
-    "name": "keycloakify-starter",
-    "homepage": "https://starter.keycloakify.dev",
-    "version": "4.9.1",
-    "description": "A starter/demo project for keycloakify",
+    "name": "vymalo-keycloakify-theme",
+    "homepage": "https://accounts.vymalo.com",
+    "version": "1.0.0",
     "repository": {
         "type": "git",
-        "url": "git://github.com/codegouvfr/keycloakify-starter.git"
+        "url": "git://github.com/vymalo/vymalo-keycloak-theme.git"
     },
     "scripts": {
         "postinstall": "copy-keycloak-resources-to-public",
@@ -15,31 +14,23 @@
         "storybook": "start-storybook -p 6006"
     },
     "keycloakify": {
-        "extraThemeProperties": [ 
+        "extraThemeProperties": [
             "foo=bar"
         ],
         "extraThemeNames": [
             "keycloakify-starter-variant-1"
         ]
     },
-    "author": "u/garronej",
-    "license": "MIT",
     "keywords": [],
     "dependencies": {
         "evt": "^2.4.15",
-        "oidc-spa": "^2.0.2",
         "keycloakify": "^8.4.0",
-        "powerhooks": "^0.26.8",
         "react": "18.1.0",
         "react-dom": "18.1.0",
-        "tsafe": "^1.6.0"
+        "react-feather": "^2.0.10",
+        "theme-change": "^2.5.0"
     },
     "devDependencies": {
-        "@types/node": "^15.3.1",
-        "@types/react": "18.0.9",
-        "@types/react-dom": "18.0.4",
-        "react-scripts": "5.0.1",
-        "typescript": "~4.7.0",
         "@storybook/addon-actions": "^6.5.16",
         "@storybook/addon-essentials": "^6.5.16",
         "@storybook/addon-interactions": "^6.5.16",
@@ -49,7 +40,19 @@
         "@storybook/node-logger": "^6.5.16",
         "@storybook/preset-create-react-app": "^4.1.2",
         "@storybook/react": "^6.5.16",
-        "@storybook/testing-library": "^0.0.13"
+        "@storybook/testing-library": "^0.0.13",
+        "@tailwindcss/aspect-ratio": "^0.4.2",
+        "@tailwindcss/forms": "^0.5.7",
+        "@tailwindcss/line-clamp": "^0.4.4",
+        "@tailwindcss/typography": "^0.5.10",
+        "@types/node": "^15.3.1",
+        "@types/react": "18.0.9",
+        "@types/react-dom": "18.0.4",
+        "daisyui": "^4.4.6",
+        "react-scripts": "^5.0.1",
+        "sass": "^1.69.5",
+        "tailwindcss": "^3.3.5",
+        "typescript": "~4.7.0"
     },
     "eslintConfig": {
         "extends": [

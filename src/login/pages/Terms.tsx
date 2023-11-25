@@ -21,7 +21,7 @@ export default function Terms(props: PageProps<Extract<KcContext, { pageId: "ter
     const { msg, msgStr } = i18n;
 
     // NOTE: If you aren't going to customize the layout of the page you can move this hook to 
-    // KcApp.tsx, see: https://docs.keycloakify.dev/terms-and-conditions
+    // main.tsx, see: https://docs.keycloakify.dev/terms-and-conditions
     useDownloadTerms({
         kcContext,
         "downloadTermMarkdown": async ({currentLanguageTag}) => {
@@ -59,32 +59,39 @@ export default function Terms(props: PageProps<Extract<KcContext, { pageId: "ter
 
     return (
         <Template {...{ kcContext, i18n, doUseDefaultCss, classes }} displayMessage={false} headerNode={msg("termsTitle")}>
-            <div id="kc-terms-text">
-                <Markdown>{termMarkdown}</Markdown>
-            </div>
-            <form className="form-actions" action={url.loginAction} method="POST">
-                <input
-                    className={clsx(
-                        getClassName("kcButtonClass"),
-                        getClassName("kcButtonClass"),
-                        getClassName("kcButtonClass"),
-                        getClassName("kcButtonPrimaryClass"),
-                        getClassName("kcButtonLargeClass")
-                    )}
-                    name="accept"
-                    id="kc-accept"
-                    type="submit"
-                    value={msgStr("doAccept")}
-                />
-                <input
-                    className={clsx(getClassName("kcButtonClass"), getClassName("kcButtonDefaultClass"), getClassName("kcButtonLargeClass"))}
-                    name="cancel"
-                    id="kc-decline"
-                    type="submit"
-                    value={msgStr("doDecline")}
-                />
-            </form>
-            <div className="clearfix" />
+            {!termMarkdown && (
+                <span className="loading loading-spinner loading-lg"></span>
+            )}
+            {termMarkdown && (
+                <>
+                    <div id="kc-terms-text" className='overflow-auto max-h-96 mb-4 p-4 border-2 rounded-lg'>
+                        <Markdown>{termMarkdown}</Markdown>
+                    </div>
+                    <form className="form-actions flex flex-col gap-4" action={url.loginAction} method="POST">
+                        <input
+                            className={clsx(
+                                getClassName("kcButtonClass"),
+                                getClassName("kcButtonClass"),
+                                getClassName("kcButtonClass"),
+                                getClassName("kcButtonPrimaryClass"),
+                                getClassName("kcButtonLargeClass")
+                            )}
+                            name="accept"
+                            id="kc-accept"
+                            type="submit"
+                            value={msgStr("doAccept")}
+                        />
+                        <input
+                            className={clsx(getClassName("kcButtonClass"), getClassName("kcButtonDefaultClass"), getClassName("kcButtonLargeClass"))}
+                            name="cancel"
+                            id="kc-decline"
+                            type="submit"
+                            value={msgStr("doDecline")}
+                        />
+                    </form>
+                    <div className="clearfix" />
+                </>
+            )}
         </Template>
     );
 }

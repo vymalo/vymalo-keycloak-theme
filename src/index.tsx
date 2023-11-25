@@ -1,10 +1,12 @@
+import './index.scss';
+
 import { createRoot } from "react-dom/client";
 import { StrictMode, lazy, Suspense } from "react";
 import { kcContext as kcLoginThemeContext } from "./login/kcContext";
 import { kcContext as kcAccountThemeContext } from "./account/kcContext";
 
-const KcLoginThemeApp = lazy(() => import("./login/KcApp"));
-const KcAccountThemeApp = lazy(() => import("./account/KcApp"));
+const KcLoginThemeApp = lazy(() => import("./login/main"));
+const KcAccountThemeApp = lazy(() => import("./account/main"));
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
@@ -20,7 +22,7 @@ createRoot(document.getElementById("root")!).render(
                 }
 
                 throw new Error(
-                  "This app is a Keycloak theme" +
+                  "This app is a Keycloak theme. " +
                   "It isn't meant to be deployed outside of Keycloak"
                 );
 

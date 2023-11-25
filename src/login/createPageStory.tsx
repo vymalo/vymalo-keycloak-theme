@@ -1,5 +1,5 @@
 import { getKcContext, type KcContext } from "./kcContext";
-import KcApp from "./KcApp";
+import Main from "./main";
 import type { DeepPartial } from "keycloakify/tools/DeepPartial";
 
 export function createPageStory<PageId extends KcContext["pageId"]>(params: {
@@ -19,7 +19,7 @@ export function createPageStory<PageId extends KcContext["pageId"]>(params: {
             <>
                 {/* If you import custom fonts in your index.html you have to import them in storybook as well*/}
                 <link rel="stylesheet" type="text/css" href="fonts/WorkSans/font.css" />
-                <KcApp kcContext={kcContext} />
+                <Main kcContext={kcContext} />
             </>
         );
 
