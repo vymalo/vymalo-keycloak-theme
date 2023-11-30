@@ -6,8 +6,8 @@ export function Logo(props: LogoProps) {
     return (
         <img
             {...props}
-            alt={"Logo"}
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+            alt={"Vymalo Logo"}
+            src="https://s3.ssegning.me/vymalo/public/vymalo-transparent.png"
         />
     )
 }

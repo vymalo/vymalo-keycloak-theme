@@ -24,7 +24,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                     </label>
                     <div className="flex-1">
                         <Logo className="h-7 w-auto"/>
-                        <span className="text-xl ml-1">accounts</span>
+                        <span className="text-xl ml-1 text-red-700">accounts</span>
                     </div>
 
                     <div className="flex-none">

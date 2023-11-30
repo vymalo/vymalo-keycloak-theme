@@ -39,7 +39,7 @@ export default function Template(props: TemplatePropsExtended) {
     return (
         <div className='flex sm:min-h-full flex-1 flex-col justify-center sm:py-12 sm:px-6 lg:px-8'>
             <div className="hidden sm:block sm:mx-auto sm:w-full sm:max-w-md">
-                <Logo className="mx-auto h-12 w-auto mb-4"/>
+                <Logo className="mx-auto h-20 w-auto mb-4"/>
 
                 {!(auth !== undefined && auth.showUsername && !auth.showResetCredentials) ? (
                     displayRequiredFields ? (
@@ -108,7 +108,7 @@ export default function Template(props: TemplatePropsExtended) {
                                 <Logo className="block sm:hidden h-[32px] w-auto"/>
                                 <div
                                     id="kc-header-wrapper"
-                                    className='justify-center flex flex-col'
+                                    className='justify-center flex flex-col text-red-700 font-bold'
                                 >
                                     {msg("loginTitleHtml", realm.displayNameHtml)}
                                 </div>

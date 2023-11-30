@@ -13,20 +13,15 @@
         "build-keycloak-theme": "yarn build && keycloakify",
         "storybook": "start-storybook -p 6006"
     },
-    "keycloakify": {
-        "themeName": [
-            "keycloakify-starter"
-        ]
-    },
     "author": "u/garronej",
     "license": "MIT",
     "keywords": [],
     "dependencies": {
-        "evt": "^2.4.15",
-        "keycloakify": "^9.0.0",
-        "react": "18.1.0",
-        "react-dom": "18.1.0",
-        "react-feather": "^2.0.10",
+        "evt": "^2.5.3",
+        "keycloakify": "^8.4.1",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-feather": "2.0.10",
         "theme-change": "^2.5.0"
     },
     "devDependencies": {

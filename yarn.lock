@@ -6100,9 +6100,9 @@ cyclist@^1.0.1:
   integrity sha512-NJGVKPS81XejHcLhaLJS7plab0fK3slPh11mESeeDq2W4ZI5kUKK/LRRdVDvjJseojbPB7ZwjnyOybg3Igea/A==
 
 daisyui@^4.4.6:
-  version "4.4.14"
-  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-4.4.14.tgz#b1e7774becab8d2f67fa84ecff93ebd9a329eb46"
-  integrity sha512-1g37QzzDFM0QLQe+qRBswkGKyaGijk84t01UMg1ytkFhQxru3zeMh5nWcpC9KnqzKgnITkpSebpGqq4gP8zRrg==
+  version "4.4.17"
+  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-4.4.17.tgz#60d21e62e02388efdb9789e486deb69e65f7b6e5"
+  integrity sha512-vcxLKoWiqPjEtcBkSayi9sDW1kWgWRdy1GjSu3zNtMiCsXwqDpCzNkdijuY9RuJ/2tBCtnwxhBv72Yizfi7KAQ==
   dependencies:
     css-selector-tokenizer "^0.8"
     culori "^3"
@@ -7109,7 +7109,7 @@ evp_bytestokey@^1.0.0, evp_bytestokey@^1.0.3:
     md5.js "^1.3.4"
     safe-buffer "^5.1.1"
 
-evt@^2.4.15, evt@^2.4.18:
+evt@^2.4.18:
   version "2.4.18"
   resolved "https://registry.yarnpkg.com/evt/-/evt-2.4.18.tgz#931012610dcd3bc7c0877d61018a704e9e5511db"
   integrity sha512-kMYW3DPrUWvFsOUf3cN1NMdg0MEFYLMLqC7hPSasNs8TOZCOBsDgazr6nXda2iUur/2L6BtRu0oCl2++oGYZxA==
@@ -7117,6 +7117,15 @@ evt@^2.4.15, evt@^2.4.18:
     minimal-polyfills "^2.2.2"
     run-exclusive "^2.2.18"
     tsafe "^1.6.0"
+
+evt@^2.5.3:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/evt/-/evt-2.5.3.tgz#eda564afdda6dfe1da687bb54933706af3f844d6"
+  integrity sha512-wZKx0JgXaTOVOXI2saNVxINU6VToOHDowMwb3NRcU6l+C59eW3w9dZgNxjokiM8rvMgc7/11yFG0cSDxn4qxgA==
+  dependencies:
+    minimal-polyfills "^2.2.3"
+    run-exclusive "^2.2.19"
+    tsafe "^1.6.5"
 
 exec-sh@^0.3.2:
   version "0.3.6"
@@ -9786,10 +9795,10 @@ junk@^3.1.0:
   resolved "https://registry.yarnpkg.com/junk/-/junk-3.1.0.tgz#31499098d902b7e98c5d9b9c80f43457a88abfa1"
   integrity sha512-pBxcB3LFc8QVgdggvZWyeys+hnrNWg4OcZIU/1X59k5jQdLBlCsYGRQaz234SqoRLTCgMH00fY0xRJH+F9METQ==
 
-keycloakify@^9.0.0:
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/keycloakify/-/keycloakify-9.0.0.tgz#0bbd3ee3772e1265e4b227275008fac90f76d9cf"
-  integrity sha512-ZIIq2JiUH4GQGb0F6GWY15D1TdUu8YsI3VSs7g7RanxXcvqgsDuvwaxHWVMR2Ss4nkqjaGw48jO95k9tps5Q+A==
+keycloakify@^8.4.1:
+  version "8.4.1"
+  resolved "https://registry.yarnpkg.com/keycloakify/-/keycloakify-8.4.1.tgz#2b716be894bf3bfe760d52014ffcdabde02bc2cf"
+  integrity sha512-Uv+HditKWNkAZ/QFERFymdjaPZ2qXkf8dJTRmg7Ej4NE6KbKmHzQpGGRrmEKRM1Y/ViQP90vmYDX6RdF/G5H8Q==
   dependencies:
     "@babel/generator" "^7.22.9"
     "@babel/parser" "^7.22.7"
@@ -10424,6 +10433,11 @@ minimal-polyfills@^2.2.1, minimal-polyfills@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/minimal-polyfills/-/minimal-polyfills-2.2.2.tgz#6b06a004acce420eb91cf94698f5e6e7f2518378"
   integrity sha512-eEOUq/LH/DbLWihrxUP050Wi7H/N/I2dQT98Ep6SqOpmIbk4sXOI4wqalve66QoZa+6oljbZWU6I6T4dehQGmw==
+
+minimal-polyfills@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/minimal-polyfills/-/minimal-polyfills-2.2.3.tgz#22af58de16807b325f29b83ca38ffb83e75ec3f4"
+  integrity sha512-oxdmJ9cL+xV72h0xYxp4tP2d5/fTBpP45H8DIOn9pASuF8a3IYTf+25fMGDYGiWW+MFsuog6KD6nfmhZJQ+uUw==
 
 minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
   version "1.0.1"
@@ -12437,13 +12451,13 @@ react-docgen@^5.0.0:
     node-dir "^0.1.10"
     strip-indent "^3.0.0"
 
-react-dom@18.1.0:
-  version "18.1.0"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.1.0.tgz#7f6dd84b706408adde05e1df575b3a024d7e8a2f"
-  integrity sha512-fU1Txz7Budmvamp7bshe4Zi32d0ll7ect+ccxNu9FlObT605GOEB8BfO4tmRJ39R5Zj831VCpvQ05QPBW5yb+w==
+react-dom@18.2.0:
+  version "18.2.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
+  integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
   dependencies:
     loose-envify "^1.1.0"
-    scheduler "^0.22.0"
+    scheduler "^0.23.0"
 
 react-element-to-jsx-string@^14.3.4:
   version "14.3.4"
@@ -12459,7 +12473,7 @@ react-error-overlay@^6.0.11:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
-react-feather@^2.0.10:
+react-feather@2.0.10:
   version "2.0.10"
   resolved "https://registry.yarnpkg.com/react-feather/-/react-feather-2.0.10.tgz#0e9abf05a66754f7b7bb71757ac4da7fb6be3b68"
   integrity sha512-BLhukwJ+Z92Nmdcs+EMw6dy1Z/VLiJTzEQACDUEnWMClhYnFykJCGWQx+NmwP/qQHGX/5CzQ+TGi8ofg2+HzVQ==
@@ -12571,14 +12585,7 @@ react-scripts@^5.0.1:
   optionalDependencies:
     fsevents "^2.3.2"
 
-react@18.1.0:
-  version "18.1.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-18.1.0.tgz#6f8620382decb17fdc5cc223a115e2adbf104890"
-  integrity sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ==
-  dependencies:
-    loose-envify "^1.1.0"
-
-react@^18.0:
+react@18.2.0, react@^18.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
@@ -13037,6 +13044,13 @@ run-exclusive@^2.2.18:
   dependencies:
     minimal-polyfills "^2.2.1"
 
+run-exclusive@^2.2.19:
+  version "2.2.19"
+  resolved "https://registry.yarnpkg.com/run-exclusive/-/run-exclusive-2.2.19.tgz#37a2fb6e3671f8ae0d63521ebd1865fc796cf307"
+  integrity sha512-K3mdoAi7tjJ/qT7Flj90L7QyPozwUaAG+CVhkdDje4HLKXUYC3N/Jzkau3flHVDLQVhiHBtcimVodMjN9egYbA==
+  dependencies:
+    minimal-polyfills "^2.2.3"
+
 run-parallel@^1.1.9:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/run-parallel/-/run-parallel-1.2.0.tgz#66d1368da7bdf921eb9d95bd1a9229e7f21a43ee"
@@ -13136,10 +13150,10 @@ saxes@^5.0.1:
   dependencies:
     xmlchars "^2.2.0"
 
-scheduler@^0.22.0:
-  version "0.22.0"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.22.0.tgz#83a5d63594edf074add9a7198b1bae76c3db01b8"
-  integrity sha512-6QAm1BgQI88NPYymgGQLCZgvep4FyePDWFpXVK+zNSUgHwlqpJy8VEh8Et0KxTACS4VWwMousBElAZOH9nkkoQ==
+scheduler@^0.23.0:
+  version "0.23.0"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.23.0.tgz#ba8041afc3d30eb206a487b6b384002e4e61fdfe"
+  integrity sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==
   dependencies:
     loose-envify "^1.1.0"
 
@@ -14399,6 +14413,11 @@ tsafe@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/tsafe/-/tsafe-1.6.0.tgz#48a9bd0a4c43df43d289bdfc1d89f0d7fffbd612"
   integrity sha512-wlUeRBnyN3EN2chXznpLm7vBEvJLEOziDU+MN6NRlD99AkwmXgtChNQhp+V97VyRa3Bp05IaL4Cocsc7JlyEUg==
+
+tsafe@^1.6.5:
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/tsafe/-/tsafe-1.6.5.tgz#74943b69190069168a53d2accd6d07891cf1cce8"
+  integrity sha512-895zss8xqqHKTc28sHGIfZKnt3C5jrstB1DyPr/h3/flK0zojsZUMQL1/W4ytdDW6KI4Oth62nb9rrxmA3s3Iw==
 
 tsconfig-paths@^3.14.1:
   version "3.14.2"
