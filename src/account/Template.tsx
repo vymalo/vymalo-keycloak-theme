@@ -6,9 +6,10 @@ import type {KcContext} from "./kcContext";
 import type {I18n} from "./i18n";
 import {assert} from "keycloakify/tools/assert";
 import {Globe, LogOut, Menu} from "react-feather";
+import {Logo} from "../components/logo";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
-    const {kcContext, i18n, active, classes, children} = props;
+    const {kcContext, i18n, active, children} = props;
 
     const {msg, changeLocale, labelBySupportedLanguageTag, currentLanguageTag} = i18n;
 
@@ -22,7 +23,8 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                         <Menu className='text-primary'/>
                     </label>
                     <div className="flex-1">
-                        <span className="text-xl">Vymalo accounts</span>
+                        <Logo />
+                        <span className="text-xl ml-1">accounts</span>
                     </div>
 
                     <div className="flex-none">

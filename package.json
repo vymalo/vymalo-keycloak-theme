@@ -14,17 +14,16 @@
         "storybook": "start-storybook -p 6006"
     },
     "keycloakify": {
-        "extraThemeProperties": [
-            "foo=bar"
-        ],
-        "extraThemeNames": [
-            "keycloakify-starter-variant-1"
+        "themeName": [
+            "keycloakify-starter"
         ]
     },
+    "author": "u/garronej",
+    "license": "MIT",
     "keywords": [],
     "dependencies": {
         "evt": "^2.4.15",
-        "keycloakify": "^8.4.0",
+        "keycloakify": "^9.0.0",
         "react": "18.1.0",
         "react-dom": "18.1.0",
         "react-feather": "^2.0.10",
