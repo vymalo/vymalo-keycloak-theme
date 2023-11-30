@@ -23,7 +23,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                         <Menu className='text-primary'/>
                     </label>
                     <div className="flex-1">
-                        <Logo />
+                        <Logo className="h-7 w-auto"/>
                         <span className="text-xl ml-1">accounts</span>
                     </div>
 
