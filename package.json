@@ -13,7 +13,10 @@
         "build-keycloak-theme": "yarn build && keycloakify",
         "storybook": "start-storybook -p 6006"
     },
-    "author": "u/garronej",
+    "author": {
+        "name": "Vymalo",
+        "email": "hello@vymalo.com"
+    },
     "license": "MIT",
     "keywords": [],
     "dependencies": {
