@@ -14,7 +14,7 @@
         "storybook": "start-storybook -p 6006"
     },
     "keycloakify": {
-        "themeName": [
+        "extraThemeNames": [
             "vymalo-theme",
             "sma-theme"
         ],
@@ -30,7 +30,7 @@
     "keywords": [],
     "dependencies": {
         "evt": "^2.5.3",
-        "keycloakify": "^9.1.4",
+        "keycloakify": "8",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-feather": "2.0.10",
