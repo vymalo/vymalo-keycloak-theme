@@ -18,7 +18,7 @@ export function Button<T extends React.ElementType>({ as, className, variant, is
         "btn-ghost": variant === "ghost",
         "btn-circle": isCircle,
         "btn-sm": size === "sm",
-        "btn-md": size === "md",
+        "btn-sm md:btn-md": size === "md",
         "btn-lg": size === "lg",
         "btn-block": fullWidth,
     })} />;

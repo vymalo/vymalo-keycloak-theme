@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import type { PageProps } from "keycloakify/account";
 import type { KcContext } from "./kcContext";
 import { useI18n } from "./i18n";
+import {useGlobalStylesheet} from "../components/hooks";
 
 const Template = lazy(() => import("./Template"));
 
@@ -20,7 +21,9 @@ export default function Main(props: { kcContext: KcContext; }) {
 
     const i18n = useI18n({ kcContext });
 
-    if (i18n === null) {
+    const styleLoaded = useGlobalStylesheet(kcContext.themeName);
+
+    if (!styleLoaded || i18n === null) {
         return null;
     }
 

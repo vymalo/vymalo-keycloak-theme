@@ -1,4 +1,5 @@
 import {createGetKcContext} from "keycloakify/login";
+import {ThemeName} from "../components/theme-name";
 
 export type KcContextExtension =
 // WARNING: It's important to keep in sync the extraThemeProperties declared in the package.json and this type definition.
@@ -25,8 +26,9 @@ export const {getKcContext} = createGetKcContext<KcContextExtension>({
     mockData: [
         {
             pageId: "login.ftl",
+            themeName: ThemeName.smaTheme,
             locale: {
-                //When we test the login page we do it in french
+                //When we test the login page we do it in French
                 currentLanguageTag: "fr",
             },
             //Uncomment the following line for hiding the Alert message

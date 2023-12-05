@@ -1,5 +1,3 @@
-import './index.scss';
-
 import {createRoot} from "react-dom/client";
 import {lazy, StrictMode, Suspense} from "react";
 import {kcContext as kcLoginThemeContext} from "./login/kcContext";

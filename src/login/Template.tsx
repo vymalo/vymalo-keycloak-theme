@@ -8,8 +8,8 @@ import type {KcContext} from "./kcContext";
 import type {I18n} from "./i18n";
 import {AlertTriangle, Check, Globe, Info, XCircle} from 'react-feather';
 import {Button} from "../components/button";
-import {ThemeToggle} from "../components/theme-toggle";
 import {Logo} from "../components/logo";
+import {ThemeToggle} from "../components/theme-toggle";
 
 type TemplatePropsExtended = {} & TemplateProps<KcContext, I18n>;
 
@@ -34,12 +34,12 @@ export default function Template(props: TemplatePropsExtended) {
 
     const {msg, changeLocale, labelBySupportedLanguageTag, currentLanguageTag} = i18n;
 
-    const {realm, locale, auth, url, message, isAppInitiatedAction} = kcContext;
+    const {realm, locale, auth, url, message, isAppInitiatedAction, themeName} = kcContext;
 
     return (
         <div className='flex sm:min-h-full flex-1 flex-col justify-center sm:py-12 sm:px-6 lg:px-8'>
             <div className="hidden sm:block sm:mx-auto sm:w-full sm:max-w-md">
-                <Logo className="mx-auto h-20 w-auto mb-4"/>
+                <Logo themeName={themeName} className="mx-auto h-20 w-auto mb-4"/>
 
                 {!(auth !== undefined && auth.showUsername && !auth.showResetCredentials) ? (
                     displayRequiredFields ? (
@@ -105,17 +105,17 @@ export default function Template(props: TemplatePropsExtended) {
                     <div>
                         <header className='flex flex-row content-center justify-between'>
                             <div className='flex flex-row gap-4'>
-                                <Logo className="block sm:hidden h-[32px] w-auto"/>
+                                <Logo themeName={themeName} className="block sm:hidden h-[32px] w-auto"/>
                                 <div
                                     id="kc-header-wrapper"
-                                    className='justify-center flex flex-col text-red-700 font-bold'
+                                    className='justify-center flex flex-col app-title font-bold'
                                 >
                                     {msg("loginTitleHtml", realm.displayNameHtml)}
                                 </div>
                             </div>
 
                             <div className='flex flex-row gap-4'>
-                                <ThemeToggle/>
+                                <ThemeToggle themeName={themeName}/>
 
                                 {realm.internationalizationEnabled && (assert(locale !== undefined), true) && locale.supported.length > 1 && (
                                     <div id="kc-locale">
@@ -124,7 +124,9 @@ export default function Template(props: TemplatePropsExtended) {
                                                 <Button
                                                     as='label'
                                                     tabIndex={0}
-                                                    isCircle isLoading size='sm'
+                                                    isCircle
+                                                    isLoading
+                                                    size='md'
                                                     variant='ghost'
                                                     id="kc-current-locale-link">
                                                     <Globe className='text-primary'/>

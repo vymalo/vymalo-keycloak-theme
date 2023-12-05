@@ -7,66 +7,62 @@ import type {I18n} from "./i18n";
 import {assert} from "keycloakify/tools/assert";
 import {Globe, LogOut, Menu} from "react-feather";
 import {Logo} from "../components/logo";
+import {ThemeToggle} from "../components/theme-toggle";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {kcContext, i18n, active, children} = props;
 
     const {msg, changeLocale, labelBySupportedLanguageTag, currentLanguageTag} = i18n;
 
-    const {locale, url, features, realm, message, referrer} = kcContext;
+    const {locale, url, features, realm, message, referrer, themeName} = kcContext;
 
     return (
         <>
             <header className='absolute top-0 w-full z-10'>
                 <nav className="navbar bg-base-200 sm:bg-base-100 px-6" role="navigation">
-                    <label htmlFor="main-drawer" className="btn btn-ghost btn-circle drawer-button lg:hidden">
+                    <label htmlFor="main-drawer"
+                           className="btn btn-sm btn-ghost btn-circle drawer-button lg:hidden mr-2">
                         <Menu className='text-primary'/>
                     </label>
                     <div className="flex-1">
-                        <Logo className="h-7 w-auto"/>
-                        <span className="text-xl ml-1 text-red-700">accounts</span>
+                        <Logo themeName={themeName} className="h-7 w-auto"/>
+                        <span className="text-xl ml-1 app-title">Accounts</span>
                     </div>
 
-                    <div className="flex-none">
-                        <ul className="menu menu-horizontal px-1">
-                            {realm.internationalizationEnabled && (assert(locale !== undefined), true) && locale.supported.length > 1 && (
-                                <li>
-                                    <div id="kc-locale-dropdown" className='dropdown dropdown-left'>
-                                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                        <label tabIndex={0} id="kc-current-locale-link">
-                                            <Globe className='text-primary'/>
-                                        </label>
-                                        <ul tabIndex={0}
-                                            className="p-2 shadow menu dropdown-content z-[1] i18n-background rounded-box w-52">
-                                            {locale.supported.map(({languageTag}) => (
-                                                <li key={languageTag}>
-                                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                                    <label
-                                                        className={clsx('cursor-pointer', {
-                                                            'active': languageTag === currentLanguageTag,
-                                                        })}
-                                                        onClick={() => changeLocale(languageTag)}>
-                                                        {labelBySupportedLanguageTag[languageTag]}
-                                                    </label>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </li>
-                            )}
-                            {referrer?.url && (
-                                <li>
-                                    <a className='link link-primary' href={referrer.url} id="referrer">
-                                        {msg("backTo", referrer.name)}
-                                    </a>
-                                </li>
-                            )}
-                            <li>
-                                <a href={url.getLogoutUrl()}>
-                                    <LogOut className='text-primary'/>
-                                </a>
-                            </li>
-                        </ul>
+                    <div className="flex-none gap-2">
+                        <ThemeToggle themeName={themeName}/>
+
+                        {realm.internationalizationEnabled && (assert(locale !== undefined), true) && locale.supported.length > 1 && (
+                            <div id="kc-locale-dropdown" className='dropdown dropdown-left'>
+                                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                <label tabIndex={0} id="kc-current-locale-link" className='btn btn-sm md:btn-md btn-ghost btn-circle'>
+                                    <Globe className='text-primary'/>
+                                </label>
+                                <ul tabIndex={0}
+                                    className="p-2 shadow menu dropdown-content z-[1] i18n-background rounded-box w-52">
+                                    {locale.supported.map(({languageTag}) => (
+                                        <li key={languageTag}>
+                                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                            <label
+                                                className={clsx('cursor-pointer', {
+                                                    'active': languageTag === currentLanguageTag,
+                                                })}
+                                                onClick={() => changeLocale(languageTag)}>
+                                                {labelBySupportedLanguageTag[languageTag]}
+                                            </label>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                        {referrer?.url && (
+                            <a className='btn btn-sm md:btn-md btn-ghost btn-circle' href={referrer.url} id="referrer">
+                                {msg("backTo", referrer.name)}
+                            </a>
+                        )}
+                        <a className='btn btn-sm md:btn-md btn-ghost btn-circle' href={url.getLogoutUrl()}>
+                            <LogOut className='text-primary'/>
+                        </a>
                     </div>
                 </nav>
             </header>

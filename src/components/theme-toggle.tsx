@@ -1,41 +1,19 @@
-import {Moon, Sun} from 'react-feather';
-import {themeChange} from 'theme-change';
-import {useEffect, useState} from "react";
+import {ThemeName} from "./theme-name";
+import {ThemeToggleVymalo} from "./theme-toggle-vymalo";
+import {ThemeToggleSma} from "./theme-toggle-sma";
 
-export function ThemeToggle() {
-    const [theme, setTheme] = useState(
-        localStorage.getItem('theme') || 'vymalo-light'
-    );
-    useEffect(() => {
-        localStorage.setItem('theme', theme);
-    }, [theme]);
+interface ThemeToggleProps {
+    themeName: string;
+}
 
-    useEffect(() => {
-        themeChange(false)
-        // 👆 false parameter is required for react project
-    }, [])
+export function ThemeToggle({themeName}: ThemeToggleProps) {
+    if (themeName === ThemeName.vymaloTheme) {
+        return <ThemeToggleVymalo/>
+    }
 
-    const onChange = () => {
-        setTheme(theme === 'vymalo-light' ? 'vymalo-dark' : 'vymalo-light')
-    };
+    if (themeName === ThemeName.smaTheme) {
+        return <ThemeToggleSma/>
+    }
 
-    return (
-        <label className="swap swap-rotate text-primary">
-
-            {/* this hidden checkbox controls the state */}
-            <input
-                type="checkbox"
-                className="theme-controller hidden"
-                checked={theme === 'vymalo-light'}
-                onChange={onChange}
-            />
-
-            {/* sun icon */}
-            <Sun data-set-theme="vymalo-light" className="swap-on fill-current"/>
-
-            {/* moon icon */}
-            <Moon data-set-theme="vymalo-dark" className="swap-off fill-current"/>
-
-        </label>
-    );
+    return null;
 }

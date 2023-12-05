@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$dimension: 16px;
+
+.input-bg {
+  @apply bg-white; // TODO
+}
+
+.i18n-background {
+  @apply bg-base-200
+}
+
+.app-title {
+  @apply text-secondary
+}
+
+.section-title {
+  @apply text-2xl font-bold leading-9 tracking-tight
+}
+
+#kc-content {
+  @apply mt-4
+}
+
+.kcContentWrapperClass {
+  & > .kcLabelWrapperClass {
+    @apply flex-1
+  }
+
+  h1 {
+    @apply text-center text-2xl font-bold leading-9 tracking-tight
+  }
+}
+
+.kcInputWrapperClass {
+  select {
+    @apply select select-bordered w-full select-primary input-bg
+  }
+
+  .kcInputErrorMessageClass {
+    span {
+      @apply label-text-alt ml-2 mb-2 text-error
+    }
+
+    @apply label
+  }
+
+  @apply form-control
+}
+
+.kcFormGroupClass {
+  & > .kcLabelClass {
+    @apply label
+  }
+
+  &.form-group {
+    // This is needed by something, but I don't know what
+    // This fucks the login.ftl
+    // @apply flex flex-col gap-4
+  }
+
+  .kcLabelWrapperClass {
+    label {
+      @apply text-primary-content mr-1
+    }
+
+    @apply label flex-row justify-start text-error
+  }
+
+  @apply form-control
+}
+
+#kc-info-message {
+  @apply mt-4;
+}
+
+.kcButtonClass {
+  @apply btn-block
+}
+
+.kcFormOptionsWrapperClass {
+  @apply my-3
+}
+
+#kc-totp-secret-qr-code {
+  @apply mx-auto
+}
+
+.kcInputClass {
+  @apply input input-bordered w-full input-primary input-bg
+}
+
+.kcFormSocialAccountListLinkClass {
+  @apply btn btn-outline btn-primary btn-block cursor-pointer mt-3 relative
+}
+
+span, p {
+  & > a[href] {
+    @apply link link-primary
+  }
+}
+
+#kc-error-message {
+  .instruction {
+    @apply bg-error text-error-content px-4 rounded-md my-4 -mx-4 py-4
+  }
+}
+
+#kc-content-wrapper {
+  .alert {
+    @apply mb-4
+  }
+
+  @apply flex flex-col gap-4
+}
+
+#instruction1 {
+  a {
+    display: inline-block;
+
+    @apply w-full
+  }
+}
+
+label {
+  input {
+    order: 1;
+    @apply checkbox checkbox-primary #{!important};
+  }
+}
+
+div.checkbox {
+  height: unset;
+  width: unset;
+  border: unset;
+  appearance: unset;
+  border-radius: unset;
+  cursor: unset;
+
+  label {
+    span {
+      order: 0;
+      @apply label-text
+    }
+
+    @apply label cursor-pointer
+  }
+
+  @apply form-control
+}
+
+.kcFormButtonsWrapperClass {
+  @apply flex flex-col gap-4
+}
+
+.kcFormClass.form-horizontal {
+
+  &#kc-totp-settings-form {
+    @apply flex flex-col gap-4
+  }
+
+  .kcSelectAuthListClass {
+    @apply flex flex-col gap-4
+  }
+
+  .kcSelectAuthListItemInfoClass {
+    .list-view-pf-left {
+      span {
+        &::before {
+          left: calc($dimension / 2);
+          background-size: $dimension;
+          display: inline-block;
+
+          content: "";
+          width: $dimension;
+          height: $dimension;
+        }
+
+        &.list-view-pf-icon-lg.fa-mobile::before {
+          background-image: url('assets/qr-code.png');
+        }
+
+        &.list-view-pf-icon-lg.fa-key::before {
+          background-image: url('assets/key.png');
+        }
+      }
+    }
+
+    .list-group-item-heading {
+      @apply text-lg font-bold
+    }
+
+    @apply flex flex-row gap-4
+  }
+}
+
+.content-area {
+  ul {
+    @apply list-disc list-inside
+  }
+}
+
+input.form-control {
+  display: unset;
+  flex-direction: unset;
+}
+
+#account {
+  .form-group {
+    .col-sm-2.col-md-2 {
+      label {
+        @apply text-primary-content mr-1
+      }
+
+      @apply label justify-start text-error
+    }
+
+    .col-sm-10.col-md-10 {
+      input {
+        @apply kcInputClass
+      }
+    }
+
+    @apply form-control w-full
+  }
+
+  #kc-form-buttons {
+    div {
+      @apply flex flex-col gap-4
+    }
+
+    @apply mt-4
+  }
+
+  h2 {
+    @apply section-title
+  }
+
+  div[subtitle] {
+    @apply text-sm font-bold
+  }
+}
+
+[data-theme="sma-light"] {
+}
+
+[data-theme="sma-middle"] {
+}
+
+[data-theme="sma-dark"] {
+}
