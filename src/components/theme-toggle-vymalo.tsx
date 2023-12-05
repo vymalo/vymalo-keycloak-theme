@@ -14,10 +14,7 @@ const calculateNextTheme = (theme: string) => {
     return defaultTheme;
 }
 
-interface ThemeToggleVymaloProps {
-}
-
-export function ThemeToggleVymalo({}: ThemeToggleVymaloProps) {
+export function ThemeToggleVymalo() {
     const [theme, setTheme] = useState(
         localStorage.getItem('vymalo-theme') ?? defaultTheme
     );
