@@ -86,17 +86,16 @@ $dimension: 28px;
 }
 
 .kcFormSocialAccountListLinkClass {
+  display: contents;
 
   .zocial {
-    display: contents;
-
     &::before {
       position: absolute;
       left: calc($dimension/2);
       background-size: $dimension;
       display: inline-block;
 
-      content: "";
+      content: "" !important;
       width: $dimension;
       height: $dimension;
     }
@@ -108,9 +107,9 @@ $dimension: 28px;
     &.facebook::before {
       background-image: url('assets/facebook.png');
     }
-  }
 
-  @apply btn btn-outline btn-primary btn-block cursor-pointer mt-3 relative
+    @apply btn btn-outline btn-primary btn-block cursor-pointer mt-3 relative
+  }
 }
 
 span, p {
@@ -186,7 +185,7 @@ div.checkbox {
     .list-view-pf-left {
       span {
         &::before {
-          left: calc($dimension/2);
+          left: calc($dimension / 2);
           background-size: $dimension;
           display: inline-block;
 

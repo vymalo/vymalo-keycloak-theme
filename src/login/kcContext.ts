@@ -171,12 +171,12 @@ export const {getKcContext} = createGetKcContext<KcContextExtension>({
                 summary: 'This is an error'
             }
         }
-    ]
+    ],
 });
 
 export const {kcContext} = getKcContext({
     // Uncomment to test the login page for development.
-    // mockPageId: "login.ftl",
+    mockPageId: "login.ftl",
 });
 
 
