@@ -13,21 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.head_commit.author.name != 'actions'
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2.1.3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          node-version: '22'
       - uses: bahmutov/npm-install@v1
-      - run: yarn build
-      - run: npx keycloakify
-      - uses: actions/upload-artifact@v2
+      - run: yarn build-keycloak-theme
+      - uses: actions/upload-artifact@v4
         with:
           name: standalone_keycloak_theme
           path: build_keycloak/target/*keycloak-theme*.jar
-      - uses: actions/upload-artifact@v2
-        with:
-          name: build
-          path: build
 
   check_if_version_upgraded:
     name: Check if version upgrade
@@ -57,7 +52,7 @@ jobs:
       )
     steps:
       - run: mkdir jars
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           name: standalone_keycloak_theme
       - run: mv *keycloak-theme*.jar jars/standalone-keycloak-theme.jar
