@@ -19,9 +19,17 @@ createRoot(document.getElementById("root")!).render(
                     return <KcAccountThemeApp kcContext={kcAccountThemeContext}/>;
                 }
 
-                throw new Error(
+                const error = new Error(
                     "This app is a Keycloak theme. " +
                     "It isn't meant to be deployed outside of Keycloak"
+                );
+                console.error(error);
+
+                return (
+                    <div>
+                        <h1>Error</h1>
+                        <p>{error.message}</p>
+                    </div>
                 );
 
             })()}
