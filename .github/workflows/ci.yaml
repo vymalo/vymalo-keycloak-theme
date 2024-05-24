@@ -55,7 +55,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: standalone_keycloak_theme
-      - run: mv *keycloak-theme*.jar jars/standalone-keycloak-theme.jar
+      - run: mv retrocompat*keycloak-theme*.jar jars/standalone-keycloak-theme.jar
       - uses: softprops/action-gh-release@v1
         with:
           name: Release v${{ needs.check_if_version_upgraded.outputs.to_version }}
