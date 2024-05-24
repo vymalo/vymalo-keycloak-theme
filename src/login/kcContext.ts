@@ -26,7 +26,7 @@ export const {getKcContext} = createGetKcContext<KcContextExtension>({
     mockData: [
         {
             pageId: "login.ftl",
-            themeName: ThemeName.smaTheme,
+            themeName: ThemeName.vymaloTheme,
             locale: {
                 //When we test the login page we do it in French
                 currentLanguageTag: "fr",

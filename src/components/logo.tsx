@@ -8,7 +8,7 @@ type LogoProps = Omit<React.ComponentPropsWithoutRef<"img">, 'src' | 'srcSet'> &
 export function Logo({themeName, ...rest}: LogoProps) {
     const url = useMemo(() => {
         if (themeName === ThemeName.vymaloTheme) {
-            return 'https://s3.ssegning.me/vymalo/public/vymalo-transparent.svg';
+            return 'https://s3.ssegning.me/vymalo/public/vymalo.svg';
         }
 
         if (themeName === ThemeName.smaTheme) {
