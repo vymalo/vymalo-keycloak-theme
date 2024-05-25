@@ -1,7 +1,7 @@
 {
     "name": "vymalo-keycloakify-theme",
     "homepage": "https://accounts.vymalo.com",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "repository": {
         "type": "git",
         "url": "git://github.com/vymalo/vymalo-keycloak-theme.git"
@@ -9,17 +9,13 @@
     "scripts": {
         "postinstall": "copy-keycloak-resources-to-public",
         "start": "react-scripts start",
-        "build": "react-scripts build",
         "build-keycloak-theme": "yarn build && keycloakify",
-        "storybook": "start-storybook -p 6006"
+        "storybook": "copy-keycloak-resources-to-public && start-storybook -p 6006",
+        "build": "react-scripts build && rimraf build/keycloak-resources"
     },
     "keycloakify": {
-        "extraThemeNames": [
-            "vymalo-theme",
-            "sma-theme"
-        ],
-        "extraThemeProperties": [
-            "foo=bar"
+        "themeName": [
+            "vymalo-theme"
         ]
     },
     "author": {
@@ -29,10 +25,10 @@
     "license": "MIT",
     "keywords": [],
     "dependencies": {
-        "evt": "^2.5.3",
-        "keycloakify": "^8.4.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
+        "evt": "^2.5.7",
+        "keycloakify": "^9.6.7",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
         "react-feather": "^2.0.10",
         "sass-loader": "^13.3.2",
         "theme-change": "^2.5.0"

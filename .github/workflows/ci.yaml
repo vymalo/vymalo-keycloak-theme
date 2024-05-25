@@ -22,7 +22,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: standalone_keycloak_theme
-          path: build_keycloak/target/*keycloak-theme*.jar
+          path: build_keycloak/target/*.jar
 
   check_if_version_upgraded:
     name: Check if version upgrade

@@ -8,7 +8,7 @@ export function createPageStory<PageId extends KcContext["pageId"]>(params: {
 
     const { pageId } = params;
 
-    function PageStory(params: { kcContext?: DeepPartial<Extract<KcContext, { pageId: PageId }>>; }) {
+    function PageStory(params: { kcContext?: any; }) {
 
         const { kcContext } = getKcContext({
             mockPageId: pageId,
@@ -18,7 +18,7 @@ export function createPageStory<PageId extends KcContext["pageId"]>(params: {
         return (
             <>
                 {/* If you import custom fonts in your index.html you have to import them in storybook as well*/}
-                <link rel="stylesheet" type="text/css" href="fonts/WorkSans/font.css" />
+                <link rel="stylesheet" type="text/css" href="https://s3.ssegning.me/home/fonts/louis-george-cafe/99travl-font.css" />
                 <Main kcContext={kcContext} />
             </>
         );

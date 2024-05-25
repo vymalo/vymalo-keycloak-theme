@@ -13,14 +13,6 @@ export function useGlobalStylesheet(themeName: string) {
                     })
                     .catch(err => console.error(err));
                 break;
-            case ThemeName.smaTheme:
-                // @ts-expect-error
-                import("./sma-theme.scss")
-                    .then(() => {
-                        setStyleLoaded(true);
-                    })
-                    .catch(err => console.error(err));
-                break;
         }
     }, [themeName]);
 

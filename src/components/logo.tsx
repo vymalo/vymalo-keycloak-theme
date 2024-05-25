@@ -11,9 +11,7 @@ export function Logo({themeName, ...rest}: LogoProps) {
             return 'https://s3.ssegning.me/vymalo/public/vymalo.svg';
         }
 
-        if (themeName === ThemeName.smaTheme) {
-            return 'https://s3.ssegning.me/sma/public/icon.svg';
-        }
+        throw new Error(`Unsupported theme name: ${themeName}`);
     }, [themeName]);
     return <img {...rest} alt={"Vymalo Logo"} src={url}/>;
 }
