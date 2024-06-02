@@ -1,5 +1,5 @@
 import themes from "daisyui/src/theming/themes";
-import { fontFamily } from "tailwindcss/defaultTheme";
+import {fontFamily} from "tailwindcss/defaultTheme";
 
 const coreVymaloTheme = {
     "primary": "#00a49a",
@@ -20,6 +20,21 @@ module.exports = {
     ],
     theme: {
         extend: {
+            maxWidth: {
+                '8xl': '100rem',
+            },
+            screens: {
+                '2xsmall': '320px',
+                xsmall: '512px',
+                small: '1024px',
+                medium: '1280px',
+                large: '1440px',
+                xlarge: '1680px',
+                '2xlarge': '1920px',
+            },
+            fontSize: {
+                '3xl': '2rem',
+            },
             fontFamily: {
                 sans: ["Louis George Cafe", ...fontFamily.sans],
                 serif: ["Louis George Cafe", ...fontFamily.serif],
@@ -37,14 +52,15 @@ module.exports = {
         themes: [
             {
                 'vymalo-light': {
-                    ...themes.cmyk,
+                    ...themes.lemonade,
                     ...coreVymaloTheme,
                 },
             },
             {
                 'vymalo-dark': {
-                    ...themes.dracula,
+                    ...themes.luxury,
                     ...coreVymaloTheme,
+                    "primary": "#fff",
                 },
             },
         ]
