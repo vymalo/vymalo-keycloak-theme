@@ -1,0 +1,10 @@
+{
+  "themes": [
+    {
+      "name": "web-store",
+      "types": [
+        "login", "account", "common"
+      ]
+    }
+  ]
+}

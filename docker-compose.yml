@@ -1,0 +1,32 @@
+services:
+  kc-db:
+    image: docker.io/bitnami/postgresql:latest
+    environment:
+      - POSTGRESQL_USERNAME=bn_keycloak
+      - POSTGRESQL_PASSWORD=bn_keycloak_password
+      - POSTGRESQL_DATABASE=keycloak
+    volumes:
+      - 'kc_db_data:/bitnami/postgresql'
+
+  keycloak:
+    image: quay.io/keycloak/keycloak
+    ports:
+      - "8080:8080"
+    environment:
+      KC_DB: postgres
+      KC_DB_USERNAME: bn_keycloak
+      KC_DB_PASSWORD: bn_keycloak_password
+      KC_DB_URL_HOST: kc-db
+      KC_DB_URL_DATABASE: keycloak
+      KC_DB_POOL_INITIAL_SIZE: 10
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      #KC_SPI_THEME_DEFAULT: 'web-store'
+    command:
+      - "start-dev"
+    volumes:
+      #- ./web-store:/opt/keycloak/themes/web-store
+      - ./build/theme.jar:/opt/keycloak/providers/my-theme.jar
+
+volumes:
+  kc_db_data: { }

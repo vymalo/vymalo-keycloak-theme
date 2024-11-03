@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$dimension: 28px;
+
+@import url(https://s3.ssegning.me/home/fonts/louis-george-cafe/99travl-font.css);
+
+.login-page-content {
+  @apply bg-base-100 md:rounded-2xl w-full h-full content-center;
+}
+
+.login-page-wrapper {
+  @apply md:py-4 md:pr-4 md:min-h-[100vh] flex flex-col items-center justify-center grow;
+}
+
+a {
+  &[id*=social] {
+    @apply no-underline !important;
+  }
+
+  @apply btn-link;
+}
+
+
+.form-control {
+  input[type="checkbox"] {
+    @apply checkbox checkbox-primary;
+  }
+}
+
+#kc-attempted-username {
+  @apply text-4xl;
+}
+
+#kc-username {
+  & {
+    @apply grow;
+  }
+}
+
+#kc-social-providers {
+  @apply py-2;
+}
+
+#kc-header {
+  img {
+    @apply w-24 sm:w-32;
+  }
+}
+
+.input-has-error {
+  input {
+    @apply input-error;
+  }
+}
+
+span.required {
+  @apply text-error;
+}
+
+.app-title {
+  @apply text-xl font-light text-error;
+}
+
+#kc-locale-dropdown {
+  @apply dropdown dropdown-left md:dropdown-right;
+}
+
+#kc-current-locale-link {
+  &::after {
+    right: calc($dimension / 2);
+    background-clip: content-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+
+    content: "" !important;
+    width: $dimension;
+    height: $dimension;
+
+    mask-image: url('../img/arrow-down.svg');
+    -webkit-mask-image: url('../img/arrow-down.svg');
+
+    @apply bg-white;
+  }
+
+  @apply btn btn-primary min-w-[120px] relative;
+}
+
+#kc-page-title {
+  @apply grow text-4xl font-bold tracking-tighter max-w-[70%];
+}
+
+li {
+  a[role="menuitem"] {
+    text-decoration: none !important;
+  }
+}
+
+.social-icon {
+
+  &::before {
+    position: absolute;
+    left: calc($dimension / 2);
+    background-clip: content-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+
+    content: "" !important;
+    width: $dimension;
+    height: $dimension;
+  }
+
+  &[id*=google]::before {
+    background-image: url('../img/google.png');
+  }
+
+  &[id*=facebook]::before {
+    background-image: url('../img/facebook.png');
+  }
+
+  &[id*=github]::before {
+    background-image: url('../img/github.svg');
+  }
+
+  &[id*=vymalo]::before {
+    background-image: url('../img/vymalo.svg');
+    background-size: $dimension * 1.2;
+    height: $dimension * 1.2;
+  }
+
+  &[id*=gitlab]::before {
+    background-image: url('../img/gitlab.svg');
+    background-size: $dimension * 2;
+  }
+
+  &[id*=microsoft]::before {
+    background-image: url('../img/microsoft.svg');
+  }
+
+  @apply btn btn-block btn-ghost border-none bg-white relative capitalize;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="search"] {
+  @apply bg-white !important;
+}
+
+
+.vymalo-dark {
+  input[type="text"], input[type="password"], input[type="email"], input[type="search"] {
+    @apply bg-base-200 !important;
+  }
+
+  .social-icon {
+    @apply bg-base-200 !important;
+  }
+}
+
+ul {
+  @apply list-disc list-inside;
+}
+
+ol {
+  @apply list-decimal;
+}
+
+#kc-totp-secret-qr-code {
+  @apply mx-auto;
+}
+
+#kc-totp-secret-key {
+  @apply text-center cursor-text block p-2 bg-base-200 rounded-2xl;
+}
+
+ul, ol {
+  @apply mb-4;
+}
+
+.container {
+  @apply mx-auto;
+}
