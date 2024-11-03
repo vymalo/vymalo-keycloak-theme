@@ -10,6 +10,8 @@ if [ -z "$PACKAGE_VERSION" ]; then
   exit 1
 fi
 
+mkdir build
+
 # Create a temporary directory for JAR packaging
 temp_dir=$(mktemp -d --tmpdir=build)
 
@@ -21,7 +23,7 @@ cleanup() {
 trap cleanup EXIT
 
 # Create META-INF directory
-mkdir -p {"$temp_dir/META-INF","$temp_dir/theme",build}
+mkdir -p {"$temp_dir/META-INF","$temp_dir/theme"}
 
 # Copy the contents of the folder to the temporary directory
 cp keycloak-themes.json "$temp_dir/META-INF"
