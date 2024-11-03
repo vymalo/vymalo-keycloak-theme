@@ -11,7 +11,7 @@ jobs:
   version:
     runs-on: ubuntu-latest
     outputs:
-      package_version: ${{ steps.version.outputs.to_version }}
+      package_version: ${{ steps.package_version.outputs.to_version }}
     steps:
       - uses: actions/checkout@v4
       - id: package_version
