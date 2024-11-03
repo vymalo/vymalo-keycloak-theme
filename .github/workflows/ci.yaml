@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: package_version
-        run: echo ::set-output name=to_version::$(node package_version.js)
+        run: echo "to_version=$(jq -r '.version' package.json)" >> $GITHUB_STATE
 
   build:
     runs-on: ubuntu-latest
