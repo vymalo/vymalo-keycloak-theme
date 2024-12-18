@@ -7,6 +7,15 @@ export default merge({}, preset, {
     content: ["./src/**/*.{ts,js,html,scss,tsx,jsx}", "./data/*/theme.properties"],
     theme: {
         extend: {
+            screens: {
+                "2xsmall": "320px",
+                xsmall: "512px",
+                small: "1024px",
+                medium: "1280px",
+                large: "1440px",
+                xlarge: "1680px",
+                "2xlarge": "1920px"
+            },
             fontSize: {
                 "3xl": "2rem"
             },
