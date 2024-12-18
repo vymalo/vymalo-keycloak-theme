@@ -893,51 +893,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vymalo/keycloak-theme@workspace:themes/vymalo":
-  version: 0.0.0-use.local
-  resolution: "@vymalo/keycloak-theme@workspace:themes/vymalo"
-  dependencies:
-    "@tailwindcss/aspect-ratio": "npm:^0.4.2"
-    "@tailwindcss/forms": "npm:^0.5.9"
-    "@tailwindcss/typography": "npm:^0.5.15"
-    "@types/node": "npm:^20.14.10"
-    "@types/webpack": "npm:^5.28.5"
-    "@typescript-eslint/eslint-plugin": "npm:^8.12.2"
-    "@typescript-eslint/parser": "npm:^8.12.2"
-    autoprefixer: "npm:^10.4.19"
-    copy-webpack-plugin: "npm:^12.0.2"
-    cross-env: "npm:^7.0.3"
-    css-loader: "npm:^7.1.2"
-    css-minimizer-webpack-plugin: "npm:^7.0.0"
-    daisyui: "npm:^4.12.14"
-    eslint: "npm:8"
-    eslint-config-next: "npm:^15.0.2"
-    eslint-config-prettier: "npm:^9.1.0"
-    eslint-plugin-prettier: "npm:^5.2.1"
-    html-loader: "npm:^5.1.0"
-    mini-css-extract-plugin: "npm:^2.9.0"
-    postcss: "npm:^8.4.39"
-    postcss-loader: "npm:^8.1.1"
-    prettier: "npm:^3.3.3"
-    sass: "npm:^1.77.8"
-    sass-loader: "npm:^14.2.1"
-    tailwind-extended-shadows: "npm:^0.4.1"
-    tailwindcss: "npm:^3.4.14"
-    tailwindcss-radix: "npm:^3.0.5"
-    ts-loader: "npm:^9.5.1"
-    ts-node: "npm:^10.9.2"
-    typescript: "npm:^5.6.3"
-    webpack: "npm:^5.93.0"
-    webpack-cli: "npm:^5.1.4"
-  languageName: unknown
-  linkType: soft
-
 "@vymalo/packages@workspace:.":
   version: 0.0.0-use.local
   resolution: "@vymalo/packages@workspace:."
-  dependencies:
-    webpack: "npm:^5.97.1"
-    webpack-cli: "npm:^5.1.4"
   languageName: unknown
   linkType: soft
 
@@ -6500,6 +6458,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"theme-change@npm:^2.5.0":
+  version: 2.5.0
+  resolution: "theme-change@npm:2.5.0"
+  checksum: 10c0/6f4824856f9e3d86eb59c2f798418ad8b3d86de42180b734fcc80ac5b2ba587b848712414c8111f99393d21ba63cc4c00099258138fa2f2ad231aaefa5f61465
+  languageName: node
+  linkType: hard
+
 "thenify-all@npm:^1.0.0":
   version: 1.6.0
   resolution: "thenify-all@npm:1.6.0"
@@ -6811,6 +6776,46 @@ __metadata:
   checksum: 10c0/bdc36fb8095d3b41df197f5fb6f11e3a26adf4059df3213e3baa93810d8f0cc76f9a74aaefc18b73e91fe7e19154ed6f134eda6fded2e0f1c8d2272ed2d2d391
   languageName: node
   linkType: hard
+
+"vymalo-01@workspace:themes/vymalo-01":
+  version: 0.0.0-use.local
+  resolution: "vymalo-01@workspace:themes/vymalo-01"
+  dependencies:
+    "@tailwindcss/aspect-ratio": "npm:^0.4.2"
+    "@tailwindcss/forms": "npm:^0.5.9"
+    "@tailwindcss/typography": "npm:^0.5.15"
+    "@types/node": "npm:^20.14.10"
+    "@types/webpack": "npm:^5.28.5"
+    "@typescript-eslint/eslint-plugin": "npm:^8.12.2"
+    "@typescript-eslint/parser": "npm:^8.12.2"
+    autoprefixer: "npm:^10.4.19"
+    copy-webpack-plugin: "npm:^12.0.2"
+    cross-env: "npm:^7.0.3"
+    css-loader: "npm:^7.1.2"
+    css-minimizer-webpack-plugin: "npm:^7.0.0"
+    daisyui: "npm:^4.12.14"
+    eslint: "npm:8"
+    eslint-config-next: "npm:^15.0.2"
+    eslint-config-prettier: "npm:^9.1.0"
+    eslint-plugin-prettier: "npm:^5.2.1"
+    html-loader: "npm:^5.1.0"
+    mini-css-extract-plugin: "npm:^2.9.0"
+    postcss: "npm:^8.4.39"
+    postcss-loader: "npm:^8.1.1"
+    prettier: "npm:^3.3.3"
+    sass: "npm:^1.77.8"
+    sass-loader: "npm:^14.2.1"
+    tailwind-extended-shadows: "npm:^0.4.1"
+    tailwindcss: "npm:^3.4.14"
+    tailwindcss-radix: "npm:^3.0.5"
+    theme-change: "npm:^2.5.0"
+    ts-loader: "npm:^9.5.1"
+    ts-node: "npm:^10.9.2"
+    typescript: "npm:^5.6.3"
+    webpack: "npm:^5.93.0"
+    webpack-cli: "npm:^5.1.4"
+  languageName: unknown
+  linkType: soft
 
 "watchpack@npm:^2.4.1":
   version: 2.4.2

@@ -12,7 +12,7 @@ const config: Configuration = {
     output: {
         clean: true,
         filename: (pathData) => {
-            return pathData.chunk.name === "runtime" || pathData.chunk.name === "main" ? "js/[name].js" : "js/[name]-[hash].js";
+            return pathData.chunk?.name === "runtime" || pathData.chunk?.name === "main" ? "js/[name].js" : "js/[name]-[hash].js";
         },
         path: path.resolve(__dirname, "data/common/resources"),
         chunkFilename: "js/chunks/[name]-[hash].js"

@@ -11,9 +11,8 @@ const config: Configuration = {
     devtool: 'source-map',
     output: {
         clean: true,
-        filename: (pathData, assetInfo?) => {
-            console.log('pathData.chunk.name', pathData.chunk.name);
-            return pathData.chunk.name === 'runtime' || pathData.chunk.name === 'main' ? 'js/[name].js' : 'js/[name]-[hash].js';
+        filename: (pathData) => {
+            return pathData.chunk?.name === 'runtime' || pathData.chunk?.name === 'main' ? 'js/[name].js' : 'js/[name]-[hash].js';
         },
         path: path.resolve(__dirname, 'data/common/resources'),
         chunkFilename: 'js/chunks/[name]-[hash].js',

@@ -1,13 +1,13 @@
 {
-  "id": "ssegning-tw-01",
-  "realm": "ssegning",
+  "id": "vymalo-01",
+  "realm": "vymalo-01",
   "registrationAllowed": true,
   "registrationEmailAsUsername": true,
   "rememberMe": true,
   "loginWithEmailAllowed": true,
   "resetPasswordAllowed": true,
   "enabled": true,
-  "loginTheme": "ssegning-tw-01",
+  "loginTheme": "vymalo-01",
   "identityProviders": [
     {
       "alias": "facebook",
@@ -45,7 +45,6 @@
   ],
   "users": [
     {
-      "id": "admin",
       "email": "${KEYCLOAK_ADMIN}@admin",
       "username": "${KEYCLOAK_ADMIN}",
       "firstName": "DevOps",

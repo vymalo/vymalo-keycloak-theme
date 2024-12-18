@@ -3,7 +3,7 @@ services:
     image: postgres:${POSTGRES_VERSION}
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "keycloak"]
+      test: [ "CMD", "pg_isready", "-U", "keycloak" ]
     environment:
       POSTGRES_DB: keycloak
       POSTGRES_USER: keycloak
@@ -32,10 +32,10 @@ services:
     ports:
       - ${KC_PORT}:8080
     volumes:
-      - ./.docker/keycloak-config/realm.json:/opt/keycloak/data/import/realm.json:ro
+      - ./.docker/keycloak-config/:/opt/keycloak/data/import/:ro
       - ./themes/ssegning-tw-01/data:/opt/keycloak/themes/ssegning-tw-01
-      - ./themes/vymalo/data:/opt/keycloak/themes/vymalo
-      - ./build/:/opt/keycloak/providers/
+      - ./themes/vymalo-01/data:/opt/keycloak/themes/vymalo-01
+      #- ./build/:/opt/keycloak/providers/
 
 volumes:
   kc_db_data: { }

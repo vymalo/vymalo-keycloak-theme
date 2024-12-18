@@ -2,22 +2,10 @@
   "files": [],
   "references": [
     {
-      "path": "vymalo-keycloak"
+      "path": "themes/ssegning-tw-01"
     },
     {
-      "path": "vymalo-mail"
+      "path": "themes/vymalo-01"
     },
-    {
-      "path": "vymalo-meilisearch"
-    },
-    {
-      "path": "vymalo-minio"
-    },
-    {
-      "path": "vymalo-printful"
-    },
-    {
-      "path": "vymalo-ui-preset"
-    }
   ]
 }

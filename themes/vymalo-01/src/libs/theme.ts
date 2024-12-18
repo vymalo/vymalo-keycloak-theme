@@ -1,7 +1,7 @@
 import themeToggle from '../templates/theme-toggle.html';
 
 const mainThemes: MainTheme[] = ["vymalo-light", "vymalo-dark"];
-const dataKey = "ssegning-tw-01-theme";
+const dataKey = "vymalo-01-theme";
 
 export function loadTheme(theme = normalizeTheme(localStorage.getItem(dataKey))) {
     if (theme) {
@@ -14,12 +14,12 @@ export function setTheme(theme: MainTheme = 'vymalo-dark') {
     localStorage.setItem(dataKey, theme);
 }
 
-function normalizeTheme(theme: string | null | undefined) {
+function normalizeTheme(theme?: string | null) {
     return mainThemes.includes(theme as MainTheme) ? theme as MainTheme : 'vymalo-dark';
 }
 
 function addThemeToggle() {
-    const headerWrapper = document.querySelector<HTMLDivElement>('#kc-header-wrapper');
+    const headerWrapper = document.querySelector<HTMLDivElement>('#kc-page-title');
     if (!headerWrapper) return;
     headerWrapper.insertAdjacentHTML('afterbegin', themeToggle);
 }
@@ -28,5 +28,4 @@ window.addEventListener('load', async () => {
     loadTheme();
     addThemeToggle();
     window.setTheme = setTheme;
-    console.log('Theme loaded');
 });
