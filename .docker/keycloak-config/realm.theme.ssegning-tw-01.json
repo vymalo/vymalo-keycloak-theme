@@ -1,6 +1,8 @@
 {
   "id": "ssegning-tw-01",
   "realm": "ssegning-tw-01",
+  "displayName": "SSegning TW 01",
+  "displayNameHtml": "<b>SSegning</b> TW 01",
   "registrationAllowed": true,
   "registrationEmailAsUsername": true,
   "rememberMe": true,

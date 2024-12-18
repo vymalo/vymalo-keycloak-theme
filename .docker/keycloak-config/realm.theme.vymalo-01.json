@@ -1,6 +1,8 @@
 {
   "id": "vymalo-01",
   "realm": "vymalo-01",
+  "displayName": "Vymalo TW 01",
+  "displayNameHtml": "<b>Vymalo</b> TW 01",
   "registrationAllowed": true,
   "registrationEmailAsUsername": true,
   "rememberMe": true,
