@@ -1,6 +1,6 @@
 {
   "name": "@vymalo/packages",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vymalo/vymalo-keycloak-theme.git"
@@ -12,6 +12,6 @@
   ],
   "packageManager": "yarn@4.5.3",
   "dependencies": {
-    "@vymalo/ui-preset": "^1.0.4"
+    "@vymalo/ui-preset": "^1.0.7"
   }
 }

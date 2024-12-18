@@ -1025,23 +1025,24 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vymalo/packages@workspace:."
   dependencies:
-    "@vymalo/ui-preset": "npm:^1.0.4"
+    "@vymalo/ui-preset": "npm:^1.0.7"
   languageName: unknown
   linkType: soft
 
-"@vymalo/ui-preset@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "@vymalo/ui-preset@npm:1.0.4"
+"@vymalo/ui-preset@npm:^1.0.7":
+  version: 1.0.7
+  resolution: "@vymalo/ui-preset@npm:1.0.7"
   dependencies:
     "@mui/material": "npm:^6.2.1"
     "@tailwindcss/aspect-ratio": "npm:^0.4.2"
     "@tailwindcss/forms": "npm:^0.5.9"
     "@tailwindcss/typography": "npm:^0.5.15"
+    colord: "npm:^2.9.3"
     daisyui: "npm:^4.12.22"
     tailwind-extended-shadows: "npm:^0.4.1"
     tailwindcss: "npm:*"
     tailwindcss-radix: "npm:^3.0.5"
-  checksum: 10c0/a7562c902a11dec8cf8cb80c4efea73555eb52a7474adfee5f2398277bd251ef771e49bbef7f99548f0dc313ada3466bdd723938f0a24968fe01b3c6ddbd966a
+  checksum: 10c0/c82176c3157aab5bb8fdc3b1890a43b0802c7efdd61000dcdfb1a3e544040143b9bb43a83c63280e7989d5fb14382f978d9e8cee82dc00f51b9b881e4a22f4c4
   languageName: node
   linkType: hard
 
