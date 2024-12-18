@@ -1,19 +1,11 @@
 {
-  "compilerOptions": {
-    "outDir": "./web-store/common/resources",
-    "baseUrl": "./",
-    "noImplicitAny": true,
-    "module": "ES6",
-    "target": "ES5",
-    "allowJs": true,
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
-  },
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    }
-  }
+  "files": [],
+  "references": [
+    {
+      "path": "themes/ssegning-tw-01"
+    },
+    {
+      "path": "themes/vymalo-01"
+    },
+  ]
 }

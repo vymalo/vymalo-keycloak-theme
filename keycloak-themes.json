@@ -1,9 +1,15 @@
 {
   "themes": [
     {
-      "name": "web-store",
+      "name": "vymalo-01",
       "types": [
-        "login", "account", "common"
+        "login", "common"
+      ]
+    },
+    {
+      "name": "ssegning-tw-01",
+      "types": [
+        "login", "common", "email"
       ]
     }
   ]

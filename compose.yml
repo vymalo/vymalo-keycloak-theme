@@ -1,0 +1,41 @@
+services:
+  postgres:
+    image: postgres:${POSTGRES_VERSION}
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "keycloak" ]
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: password
+    volumes:
+      - 'kc_db_data:/var/lib/postgresql/data'
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:${KC_VERSION}
+    command:
+      - "start-dev"
+      - "--import-realm"
+      - "--spi-theme-static-max-age=-1"
+      - "--spi-theme-cache-themes=false"
+      - "--spi-theme-cache-templates=false"
+    restart: unless-stopped
+    environment:
+      KC_DB: postgres
+      KC_DB_USERNAME: keycloak
+      KC_DB_PASSWORD: password
+      KC_DB_URL: "jdbc:postgresql://postgres:5432/keycloak"
+      KC_LOG_LEVEL: ${KC_LOG_LEVEL}
+      KC_REALM_NAME: ${KC_REALM_NAME}
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+    ports:
+      - ${KC_PORT}:8080
+    volumes:
+      - ./.docker/keycloak-config/:/opt/keycloak/data/import/:ro
+      - ./themes/ssegning-tw-01/data:/opt/keycloak/themes/ssegning-tw-01
+      - ./themes/vymalo-01/data:/opt/keycloak/themes/vymalo-01
+      #- ./build/:/opt/keycloak/providers/
+
+volumes:
+  kc_db_data: { }

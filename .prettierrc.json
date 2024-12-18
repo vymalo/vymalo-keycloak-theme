@@ -10,7 +10,7 @@
     "overrides": [
         {
             "files": [
-                "src/**/*.{ts,tsx,scss,css,md,json}"
+                "themes/**/src/**/*.{ts,tsx,scss,css,md,json}"
             ],
             "options": {
                 "printWidth": 150
