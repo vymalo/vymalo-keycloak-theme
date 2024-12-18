@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$dimension: 28px;
+
+hr {
+  @apply divider;
+}
+
+span, p {
+  a {
+    @apply btn-link;
+  }
+}
+
+.app-card {
+  @apply sm:mt-4 sm:mx-auto sm:w-full sm:max-w-[320px] px-4 sm:px-0;
+}
+
+.form-long {
+  label {
+    & {
+      @apply label-text;
+    }
+
+    @apply cursor-pointer;
+  }
+
+  @apply flex flex-col items-start justify-between mb-4;
+}
+
+#kc-form-buttons {
+  @apply mt-2;
+}
+
+#kc-page-title {
+  @apply text-4xl sm:text-5xl font-extrabold;
+}
+
+#kc-current-locale-link {
+  svg {
+    @apply w-4 h-4;
+  }
+
+  @apply btn btn-sm btn-outline;
+}
+
+.app-wrapper {
+  label, .subtitle {
+    color: initial;
+
+    span {
+      @apply text-error;
+    }
+  }
+
+  &.waff {
+    @apply flex-col items-start;
+  }
+
+  @apply flex items-center text-error;
+}
+
+input[aria-invalid="true"] {
+  @apply input-error;
+}
+
+.app-title {
+  @apply text-xl font-light text-error;
+}
+
+.app-social {
+
+  &::before {
+    position: absolute;
+    left: calc($dimension / 2);
+    background-clip: content-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+
+    content: "" !important;
+    width: $dimension;
+    height: $dimension;
+  }
+
+  &[id*=google]::before {
+    background-image: url('../img/google.png');
+  }
+
+  &[id*=facebook]::before {
+    background-image: url('../img/facebook.png');
+  }
+
+  &[id*=github]::before {
+    background-image: url('../img/github.svg');
+  }
+
+  &[id*=vymalo]::before {
+    background-image: url('../img/vymalo.svg');
+    background-size: $dimension * 1.2;
+    height: $dimension * 1.2;
+  }
+
+  &[id*=gitlab]::before {
+    background-image: url('../img/gitlab.svg');
+    background-size: $dimension * 2;
+  }
+
+  &[id*=microsoft]::before {
+    background-image: url('../img/microsoft.svg');
+  }
+}
+
+#kc-totp-secret-qr-code {
+  @apply w-full my-4;
+}
+
+#kc-totp-supported-apps {
+  @apply list-disc list-inside;
+}
+
+#kc-totp-settings {
+  @apply gap-4 flex flex-col mb-4;
+}

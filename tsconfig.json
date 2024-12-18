@@ -1,19 +1,23 @@
 {
-  "compilerOptions": {
-    "outDir": "./web-store/common/resources",
-    "baseUrl": "./",
-    "noImplicitAny": true,
-    "module": "ES6",
-    "target": "ES5",
-    "allowJs": true,
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
-  },
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
+  "files": [],
+  "references": [
+    {
+      "path": "vymalo-keycloak"
+    },
+    {
+      "path": "vymalo-mail"
+    },
+    {
+      "path": "vymalo-meilisearch"
+    },
+    {
+      "path": "vymalo-minio"
+    },
+    {
+      "path": "vymalo-printful"
+    },
+    {
+      "path": "vymalo-ui-preset"
     }
-  }
+  ]
 }

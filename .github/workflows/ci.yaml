@@ -14,21 +14,39 @@ jobs:
       package_version: ${{ steps.package_version.outputs.to_version }}
     steps:
       - uses: actions/checkout@v4
+        name: Checkout code
+
       - id: package_version
         run: echo "to_version=$(jq -r '.version' package.json)" >> $GITHUB_OUTPUT
+        name: Get package version
 
   build:
     runs-on: ubuntu-latest
     if: github.event.head_commit.author.name != 'actions'
     steps:
       - uses: actions/checkout@v4
+        name: Checkout code
+
+      - name: Enable Corepack
+        run: corepack enable
+
       - uses: actions/setup-node@v4
+        name: Setup node
         with:
           node-version: "22"
+          cache: yarn
+
       - uses: bahmutov/npm-install@v1
+        name: Install dependencies
+
       - run: yarn build
+        name: Build theme
+
       - run: chmod +x ./package.sh && ./package.sh
+        name: Package theme
+
       - uses: actions/upload-artifact@v4
+        name: Upload artifact
         with:
           name: standalone_keycloak_theme
           path: build/*.jar
@@ -43,11 +61,18 @@ jobs:
     if: github.event_name == 'push'
     steps:
       - run: mkdir jars
+        name: Create jars directory
+
       - uses: actions/download-artifact@v4
+        name: Download artifact
         with:
           name: standalone_keycloak_theme
+
       - run: mv *.jar jars/
+        name: Move jars to directory
+
       - uses: softprops/action-gh-release@v2
+        name: Create GitHub release
         with:
           name: Release ${{ needs.version.outputs.package_version }}
           tag_name: v${{ needs.version.outputs.package_version }}
