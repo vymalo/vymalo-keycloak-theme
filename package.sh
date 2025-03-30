@@ -2,9 +2,15 @@
 
 set -ex
 
+THEME_NAME=$1
+if [ -z "$THEME_NAME" ]; then
+  echo "Please set the THEME_NAME environment variable"
+  exit 1
+fi
+
 # Get the package version from the package.json file
-PACKAGE_VERSION=$(jq -r '.version' package.json)
 echo "Packaging theme... $PACKAGE_VERSION"
+PACKAGE_VERSION=$(jq -r '.version' "package.json")
 
 # Check if the THEME_VERSION environment variable is set
 if [ -z "$PACKAGE_VERSION" ]; then
@@ -31,15 +37,24 @@ trap cleanup EXIT
 mkdir -p {"$temp_dir/META-INF","$temp_dir/theme"}
 
 # Copy the contents of the folder to the temporary directory
-cp keycloak-themes.json "$temp_dir/META-INF"
+cat <<EOF > "$temp_dir/META-INF/keycloak-themes.json"
+{
+  "themes": [
+    {
+      "name": "$THEME_NAME",
+      "types": [
+        "login", "common"
+      ]
+    }
+  ]
+}
+EOF
 
 # Copy the theme data to the temporary directory
-for theme in $(jq -r '.themes | .[].name' keycloak-themes.json); do
-  cp -r "themes/$theme/data" "$temp_dir/theme/$theme"
-done
+cp -r "data" "$temp_dir/theme/$THEME_NAME"
 
 # Create the JAR file inside the providers directory
-jar cf "build/theme-$PACKAGE_VERSION.jar" -C "$temp_dir" .
+jar cf "build/theme-$THEME_NAME-$PACKAGE_VERSION.jar" -C "$temp_dir" .
 
 # Remove the temporary directory
-echo "Theme created: build/theme-$PACKAGE_VERSION.jar"
+echo "Theme created: build/theme-$THEME_NAME-$PACKAGE_VERSION.jar"

@@ -1,0 +1,1 @@
+# Vymalo Keycloak theme

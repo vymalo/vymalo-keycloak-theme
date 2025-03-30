@@ -1,43 +1,38 @@
 {
-  "name": "vymalo-01",
-  "version": "2.0.1",
+  "name": "vymalo-02",
+  "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "build": "cross-env webpack"
   },
   "devDependencies": {
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/forms": "^0.5.9",
-    "@tailwindcss/typography": "^0.5.15",
+    "@tailwindcss/postcss": "^4.0.17",
     "@types/feather-icons": "^4",
-    "@types/lodash": "^4",
     "@types/node": "^20.14.10",
     "@types/webpack": "^5.28.5",
     "@typescript-eslint/eslint-plugin": "^8.12.2",
     "@typescript-eslint/parser": "^8.12.2",
-    "@vymalo/ui-preset": "1.0.7",
-    "autoprefixer": "^10.4.19",
+    "@vymalo/ui-preset": "^1.0.8-rc.5",
     "copy-webpack-plugin": "^12.0.2",
     "cross-env": "^7.0.3",
     "css-loader": "^7.1.2",
     "css-minimizer-webpack-plugin": "^7.0.0",
-    "daisyui": "^4.12.14",
+    "cssnano": "^7.0.6",
+    "daisyui": "^5.0.9",
     "eslint": "8",
     "eslint-config-next": "^15.0.2",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "html-loader": "^5.1.0",
-    "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^2.9.0",
-    "postcss": "^8.4.39",
+    "postcss": "^8.5.3",
     "postcss-loader": "^8.1.1",
     "prettier": "^3.3.3",
     "sass": "^1.77.8",
     "sass-loader": "^14.2.1",
-    "tailwind-extended-shadows": "^0.4.1",
-    "tailwindcss": "^3.4.14",
-    "tailwindcss-radix": "^3.0.5",
+    "sucrase": "^3.35.0",
+    "tailwindcss": "^4.0.17",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3",
@@ -46,10 +41,6 @@
   },
   "packageManager": "yarn@4.7.0",
   "dependencies": {
-    "feather-icons": "^4.29.2",
-    "theme-change": "^2.5.0"
-  },
-  "resolutions": {
-    "tailwindcss": "3"
+    "feather-icons": "^4.29.2"
   }
 }

@@ -51,3 +51,7 @@ jspm_packages
 common
 
 .yarn
+
+.idea
+
+*.jar

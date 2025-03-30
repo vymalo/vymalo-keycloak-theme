@@ -12,10 +12,10 @@ const config: Configuration = {
     output: {
         clean: true,
         filename: (pathData) => {
-            return pathData.chunk?.name === 'runtime' || pathData.chunk?.name === 'main' ? 'js/[name].js' : 'js/[name]-[hash].js';
+            return pathData.chunk?.name === 'runtime' || pathData.chunk?.name === 'main' ? 'js/[name].js' : 'js/[name]-[fullhash].js';
         },
         path: path.resolve(__dirname, 'data/common/resources'),
-        chunkFilename: 'js/chunks/[name]-[hash].js',
+        chunkFilename: 'js/chunks/[name]-[fullhash].js',
     },
     mode: 'production',
     resolve: {
@@ -40,7 +40,7 @@ const config: Configuration = {
     },
     optimization: {
         splitChunks: {
-            filename: 'js/split/[name]-[hash].js',
+            filename: 'js/split/[name]-[fullhash].js',
             minChunks: 1,
             minSize: 100_000,
         },

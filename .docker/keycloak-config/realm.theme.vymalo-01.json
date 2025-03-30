@@ -47,7 +47,7 @@
   ],
   "users": [
     {
-      "email": "${KEYCLOAK_ADMIN}@admin",
+      "email": "${KEYCLOAK_ADMIN}@admin.com",
       "username": "${KEYCLOAK_ADMIN}",
       "firstName": "DevOps",
       "lastName": "SRE",

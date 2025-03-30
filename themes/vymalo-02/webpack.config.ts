@@ -38,7 +38,7 @@ const config: Configuration = {
                     MiniCssExtractPlugin.loader,
                     "css-loader",
                     "postcss-loader",
-                    "sass-loader"
+                    "sass-loader",
                 ]
             }
         ]
@@ -58,7 +58,7 @@ const config: Configuration = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: "css/[name].css",
-            chunkFilename: "css/chunks/[id].css"
+            chunkFilename: "css/chunks/[id].css",
         }),
         new CopyPlugin({
             patterns: [
