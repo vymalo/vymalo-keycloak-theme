@@ -8,16 +8,6 @@ if [ -z "$THEME_NAME" ]; then
   exit 1
 fi
 
-# Get the package version from the package.json file
-echo "Packaging theme... $PACKAGE_VERSION"
-PACKAGE_VERSION=$(jq -r '.version' "package.json")
-
-# Check if the THEME_VERSION environment variable is set
-if [ -z "$PACKAGE_VERSION" ]; then
-  echo "Please set the THEME_VERSION environment variable"
-  exit 1
-fi
-
 # Create the build directory
 mkdir -p build
 
@@ -54,7 +44,7 @@ EOF
 cp -r "data" "$temp_dir/theme/$THEME_NAME"
 
 # Create the JAR file inside the providers directory
-jar cf "build/theme-$THEME_NAME-$PACKAGE_VERSION.jar" -C "$temp_dir" .
+jar cf "build/theme-$THEME_NAME.jar" -C "$temp_dir" .
 
 # Remove the temporary directory
-echo "Theme created: build/theme-$THEME_NAME-$PACKAGE_VERSION.jar"
+echo "Theme created: build/theme-$THEME_NAME.jar"
