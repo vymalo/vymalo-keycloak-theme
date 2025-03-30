@@ -78,16 +78,10 @@ jobs:
         with:
           path: .
       
-      - run: ls -la
-        name: "testings..."
-      
-      - run: ls -la *
-        name: "testings..."
-      
       - run: tree
         name: "testings..."
 
-      - run: mv *.jar jars/
+      - run: mv **/*.jar jars/
         name: Move jars to directory
 
       - uses: softprops/action-gh-release@v2
