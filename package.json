@@ -10,8 +10,8 @@
   "workspaces": [
     "themes/*"
   ],
-  "packageManager": "yarn@4.5.3",
-  "dependencies": {
-    "@vymalo/ui-preset": "^1.0.7"
+  "packageManager": "yarn@4.7.0",
+  "scripts": {
+    "build": "sh ./package.sh"
   }
 }

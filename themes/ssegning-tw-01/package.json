@@ -33,7 +33,7 @@
   "scripts": {
     "build": "cross-env webpack"
   },
-  "packageManager": "yarn@4.5.3",
+  "packageManager": "yarn@4.7.0",
   "dependencies": {
     "feather-icons": "^4.29.2"
   }

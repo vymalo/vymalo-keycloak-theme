@@ -7,6 +7,12 @@
       ]
     },
     {
+      "name": "vymalo-02",
+      "types": [
+        "login", "common"
+      ]
+    },
+    {
       "name": "ssegning-tw-01",
       "types": [
         "login", "common", "email"
