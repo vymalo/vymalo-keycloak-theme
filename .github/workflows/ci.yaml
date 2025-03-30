@@ -58,7 +58,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         name: Upload artifact
         with:
-          name: standalone_keycloak_theme
+          name: standalone_keycloak_theme-${{matrix.chart}}
           path: ./themes/${{matrix.chart}}/build/theme-${{matrix.chart}}-*.jar
 
   create_github_release:
@@ -76,7 +76,7 @@ jobs:
       - uses: actions/download-artifact@v4
         name: Download artifact
         with:
-          name: standalone_keycloak_theme
+          path: .
 
       - run: mv *.jar jars/
         name: Move jars to directory

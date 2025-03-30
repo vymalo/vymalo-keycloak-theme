@@ -53,3 +53,5 @@ common
 .yarn
 
 .idea
+
+*.jar
