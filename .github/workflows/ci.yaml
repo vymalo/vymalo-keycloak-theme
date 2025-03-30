@@ -59,7 +59,7 @@ jobs:
         name: Upload artifact
         with:
           name: standalone_keycloak_theme
-          path: build/theme-${{matrix.chart}}-*.jar
+          path: ./themes/${{matrix.chart}}/build/theme-${{matrix.chart}}-*.jar
 
   create_github_release:
     runs-on: ubuntu-latest
