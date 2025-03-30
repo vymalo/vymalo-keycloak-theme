@@ -77,6 +77,9 @@ jobs:
         name: Download artifact
         with:
           path: .
+      
+      - run: ls -la
+        name: "testings..."
 
       - run: mv *.jar jars/
         name: Move jars to directory
