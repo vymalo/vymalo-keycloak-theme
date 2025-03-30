@@ -80,6 +80,12 @@ jobs:
       
       - run: ls -la
         name: "testings..."
+      
+      - run: ls -la *
+        name: "testings..."
+      
+      - run: tree
+        name: "testings..."
 
       - run: mv *.jar jars/
         name: Move jars to directory
