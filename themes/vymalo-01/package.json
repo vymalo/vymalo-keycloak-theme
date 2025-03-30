@@ -10,10 +10,13 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.9",
     "@tailwindcss/typography": "^0.5.15",
+    "@types/feather-icons": "^4",
+    "@types/lodash": "^4",
     "@types/node": "^20.14.10",
     "@types/webpack": "^5.28.5",
     "@typescript-eslint/eslint-plugin": "^8.12.2",
     "@typescript-eslint/parser": "^8.12.2",
+    "@vymalo/ui-preset": "1.0.7",
     "autoprefixer": "^10.4.19",
     "copy-webpack-plugin": "^12.0.2",
     "cross-env": "^7.0.3",
@@ -25,6 +28,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "html-loader": "^5.1.0",
+    "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^2.9.0",
     "postcss": "^8.4.39",
     "postcss-loader": "^8.1.1",
@@ -42,6 +46,10 @@
   },
   "packageManager": "yarn@4.7.0",
   "dependencies": {
+    "feather-icons": "^4.29.2",
     "theme-change": "^2.5.0"
+  },
+  "resolutions": {
+    "tailwindcss": "3"
   }
 }
