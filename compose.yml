@@ -1,6 +1,6 @@
 services:
   keycloak:
-    image: quay.io/keycloak/keycloak:26.1.4
+    image: quay.io/keycloak/keycloak:26.2.5
     command:
       - "start-dev"
       - "--import-realm"
@@ -19,4 +19,5 @@ services:
       - ./themes/ssegning-tw-01/data:/opt/keycloak/themes/ssegning-tw-01:ro
       - ./themes/vymalo-01/data:/opt/keycloak/themes/vymalo-01:ro
       - ./themes/vymalo-02/data:/opt/keycloak/themes/vymalo-02:ro
+      - ./themes/vaam-01/data:/opt/keycloak/themes/vaam-01:ro
       #- ./build/:/opt/keycloak/providers/

@@ -29,6 +29,7 @@ jobs:
           - ssegning-tw-01
           - vymalo-01
           - vymalo-02
+          - vaam-01
     defaults:
       run:
         working-directory: ./themes/${{matrix.chart}}
